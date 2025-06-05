@@ -132,22 +132,21 @@ export default function Hero() {
           borderStyle="dashed"
           fillWidth
           fillHeight
-          maxHeight={60}
-          height={40}
           radius="m"
           padding="m"
         >
           <Row
-            horizontal="space-between"
+            horizontal="center"
             vertical="center"
             fillWidth
             fillHeight
             radius="xl"
             style={{ backgroundColor: "#F0EEEC" }}
+            wrap={true}
           >
             <Column fillWidth fillHeight width={30}>
               {" "}
-              <Scroller direction="column" fillHeight paddingBottom="20">
+              <Scroller direction="column" fillHeight paddingBottom="0">
                 {" "}
                 <Column
                   fitHeight
@@ -399,7 +398,7 @@ export default function Hero() {
                             variant="label-default-s"
                             className={lexend.className}
                           >
-                            Send high priority emails 
+                            Send high priority emails
                           </Text>
                           <Text
                             onBackground="neutral-weak"
@@ -418,10 +417,11 @@ export default function Hero() {
 
             <Flex
               maxWidth={63}
-              fillHeight
               width={63}
-              paddingTop="64"
+              vertical="center"
+              height={48}
               paddingLeft="64"
+              horizontal="end"
               overflow="hidden"
             >
               <Media
@@ -429,9 +429,10 @@ export default function Hero() {
                 unoptimized
                 fillHeight
                 topLeftRadius="xl"
+                bottomLeftRadius="xl"
                 fillWidth
                 width={70}
-                height={40}
+                height={45}
               />
             </Flex>
           </Row>
