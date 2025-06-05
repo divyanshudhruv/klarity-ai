@@ -123,13 +123,11 @@ const Scroller: React.FC<ScrollerProps> = ({
   return (
     <Flex fillWidth className={classNames(styles.container, className)} style={style} {...rest}>
       {showPrevButton && (
-        <Fade
-          base={fadeColor}
+        <Flex
           position="absolute"
           padding="4"
           horizontal={direction === "column" ? "center" : undefined}
           vertical={direction === "column" ? "start" : "center"}
-          to={direction === "row" ? "right" : "bottom"}
           width={direction === "row" ? 4 : undefined}
           height={direction === "column" ? 4 : undefined}
           fillHeight={direction === "row"}
@@ -151,7 +149,7 @@ const Scroller: React.FC<ScrollerProps> = ({
             variant="secondary"
             aria-label="Scroll Previous"
           />
-        </Fade>
+        </Flex>
       )}
       <Flex
         fillWidth
@@ -164,13 +162,11 @@ const Scroller: React.FC<ScrollerProps> = ({
         {wrappedChildren}
       </Flex>
       {showNextButton && (
-        <Fade
-          base={fadeColor}
+        <Flex
           padding="4"
           position="absolute"
           horizontal={direction === "column" ? "center" : "end"}
           vertical={direction === "column" ? "end" : "center"}
-          to={direction === "row" ? "left" : "top"}
           width={direction === "row" ? 4 : undefined}
           height={direction === "column" ? 4 : undefined}
           fillHeight={direction === "row"}
@@ -192,7 +188,7 @@ const Scroller: React.FC<ScrollerProps> = ({
             variant="secondary"
             aria-label="Scroll Next"
           />
-        </Fade>
+        </Flex>
       )}
     </Flex>
   );

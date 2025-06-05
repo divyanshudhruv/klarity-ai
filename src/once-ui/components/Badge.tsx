@@ -49,7 +49,7 @@ const Badge = forwardRef<HTMLDivElement | HTMLAnchorElement, BadgeProps>(
         onBackground="brand-strong"
         border="brand-alpha-medium"
         textVariant="label-strong-s"
-        shadow="l"
+        // shadow="l"
         {...rest}
       >
         {icon && <Icon marginRight="8" size="s" name={icon} onBackground="brand-medium" />}
