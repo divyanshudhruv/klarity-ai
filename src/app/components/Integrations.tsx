@@ -27,7 +27,7 @@ export default function Integrations() {
       fitHeight
       radius="m"
       padding="m"
-      maxWidth={100}
+     
     >
       <Column
         horizontal="center"
@@ -103,7 +103,7 @@ export default function Integrations() {
               unoptimized
             ></Media>
           </Flex>
-          <Flex
+          {/* <Flex
             width={5}
             height={5}
             radius="l"
@@ -130,7 +130,7 @@ export default function Integrations() {
               height={2.5}
               unoptimized
             ></Media>
-          </Flex>
+          </Flex> */}
           <Flex
             width={5}
             height={5}
