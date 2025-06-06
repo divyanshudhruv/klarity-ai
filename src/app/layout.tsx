@@ -76,22 +76,18 @@ export default function RootLayout({
         <script
           // biome-ignore lint/security/noDangerouslySetInnerHtml: <It's not dynamic nor a security issue.>
           dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  const theme = localStorage.getItem('theme') || 'system';
-                  const root = document.documentElement;
-                  if (theme === 'system') {
-                    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                    root.setAttribute('data-theme', isDark ? 'dark' : 'light');
-                  } else {
-                    root.setAttribute('data-theme', theme);
-                  }
-                } catch (e) {
-                  document.documentElement.setAttribute('data-theme', 'dark');
-                }
-              })();
-            `,
+        __html: `
+          (function() {
+            try {
+          const theme = 'light';
+          const root = document.documentElement;
+          localStorage.setItem('theme', theme);
+          root.setAttribute('data-theme', theme);
+            } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+            }
+          })();
+        `,
           }}
         />
         <link
