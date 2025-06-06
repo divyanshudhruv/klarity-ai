@@ -1,29 +1,217 @@
 import {
-  Heading,
   Text,
   Button,
-  Column,
-  Badge,
-  Logo,
-  Line,
-  LetterFx,
+  
   Row,
   Flex,
-  SmartLink,
 } from "@/once-ui/components";
 import { MegaMenu } from "@/once-ui/modules";
 import { Lexend, Poppins, DM_Sans } from "next/font/google";
 
-const lexend = Lexend({ subsets: ["latin"], weight: ["400", "700"] });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 
 export default function Navbar() {
+  const menuGroups = [
+    {
+      id: "product",
+      label: "Product",
+      suffixIcon: "ChevronDown", // Lucide React icon name
+      sections: [
+        {
+          title: "Core Features",
+          links: [
+            {
+              label: "Intelligent Parsing",
+              href: "/features/parsing",
+              icon: "MessageSquareText", // Lucide icon for communication/text
+              description:
+                "Transform messages, chats, and emails into structured data.",
+            },
+            {
+              label: "Actionable To-Dos",
+              href: "/features/todos",
+              icon: "ListTodo", // Lucide icon for to-do list
+              description: "Automatically generate tasks and notes from text.",
+            },
+            {
+              label: "Urgency Alerts",
+              href: "/features/alerts",
+              icon: "BellRing", // Lucide icon for alerts/notifications
+              description:
+                "Never miss critical work with proactive notifications.",
+            },
+          ],
+        },
+        {
+          title: "AI Capabilities",
+          links: [
+            {
+              label: "Smart Summaries",
+              href: "/features/summarize",
+              icon: "Lightbulb", // Lucide icon for insights/ideas
+              description: "Get concise overviews of long conversations.",
+            },
+            {
+              label: "Detailed Elaboration",
+              href: "/features/elaborate",
+              icon: "UserCheck", // Lucide icon for detail/validation
+              description: "Expand on any task or note for more context.",
+            },
+            {
+              label: "Draft Follow-ups",
+              href: "/features/followup",
+              icon: "Mail", // Lucide icon for email/messaging
+              description:
+                "Generate personalized communication drafts instantly.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "solutions",
+      label: "Solutions",
+      suffixIcon: "ChevronDown",
+      sections: [
+        {
+          title: "By Use Case",
+          links: [
+            {
+              label: "Project Management",
+              href: "/solutions/project-management",
+              icon: "ClipboardList", // Lucide icon for project management
+              description: "Streamline team communication and task delegation.",
+            },
+            {
+              label: "Customer Communication",
+              href: "/solutions/customer-comms",
+              icon: "Megaphone", // Lucide icon for announcements/communication
+              description: "Ensure no customer query goes unaddressed.",
+            },
+            {
+              label: "Personal Productivity",
+              href: "/solutions/personal-productivity",
+              icon: "Zap", // Lucide icon for efficiency/speed
+              description: "Master your digital inbox and daily tasks.",
+            },
+          ],
+        },
+        {
+          title: "For Teams",
+          links: [
+            {
+              label: "Small Businesses",
+              href: "/solutions/small-business",
+              icon: "Briefcase", // Lucide icon for business
+              description:
+                "Automate communication workflows for growing teams.",
+            },
+            {
+              label: "Remote Teams",
+              href: "/solutions/remote-teams",
+              icon: "Globe", // Lucide icon for global/remote
+              description: "Stay aligned and efficient across distances.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "resources",
+      label: "Resources",
+      suffixIcon: "ChevronDown",
+      sections: [
+        {
+          title: "Learn & Grow",
+          links: [
+            {
+              label: "Blog",
+              href: "/blog",
+              icon: "FileText", // Lucide icon for documents/text
+              description: "Latest insights and product updates.",
+            },
+            {
+              label: "Guides",
+              href: "/guides",
+              icon: "Book", // Lucide icon for learning/guides
+              description: "Step-by-step tutorials to get started.",
+            },
+            {
+              label: "API Reference",
+              href: "/api",
+              icon: "Code", // Lucide icon for code/API
+              description: "Integrate Klarity-AI with your existing tools.",
+            },
+          ],
+        },
+        {
+          title: "Support",
+          links: [
+            {
+              label: "Help Center",
+              href: "/help",
+              icon: "Info", // Lucide icon for information/help
+              description: "Find answers to your questions.",
+            },
+            {
+              label: "Community",
+              href: "/community",
+              icon: "Users", // Lucide icon for community/users
+              description: "Connect with other Klarity-AI users.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "company",
+      label: "Company",
+      suffixIcon: "ChevronDown",
+      sections: [
+        {
+          title: "About Us",
+          links: [
+            {
+              label: "Our Story",
+              href: "/about",
+              icon: "Feather", // Lucide icon for story/creation
+              description: "Learn about Klarity-AI's mission and journey.",
+            },
+            {
+              label: "Careers",
+              href: "/careers",
+              icon: "Rocket", // Lucide icon for growth/careers
+              description: "Join our innovative team.",
+            },
+          ],
+        },
+        {
+          title: "Connect",
+          links: [
+            {
+              label: "Contact",
+              href: "/contact",
+              icon: "Mail", // Lucide icon for contact
+              description: "Get in touch with us.",
+            },
+            {
+              label: "Press",
+              href: "/press",
+              icon: "Megaphone", // Lucide icon for announcements/press
+              description: "Klarity-AI in the news.",
+            },
+          ],
+        },
+      ],
+    },
+  ];
   return (
     <Row
+    zIndex={10}
       vertical="center"
       horizontal="space-between"
-      height={6}
+      height={5}
       fillWidth
       paddingX="56"
       borderBottom="neutral-medium"
