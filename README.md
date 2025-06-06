@@ -1,7 +1,6 @@
-# Once UI for Next.js
+# Once UI for Next.js | Klarity-AI
 
 A design system for indie builders who move fast and break limits without neglecting quality. Once UI combines the simplicity of low-code with the power of code: write 70% less compared to shadcn + tailwind.
-
 
 ![Once UI](public/images/og/home.jpg)
 
@@ -9,11 +8,11 @@ A design system for indie builders who move fast and break limits without neglec
 
 Start building your Next.js app in minutes.
 
-* **Customization**: Manage design config in a single file.
-* **Components**: Access advanced components with simple APIs.
-* **Data-viz**: Add responsive charts with a few lines of code.
-* **SEO**: Use our SEO components to simplify meta and schema setup.
-* **PRO**: Launch ready-made apps without minimal coding with Once UI Pro.
+- **Customization**: Manage design config in a single file.
+- **Components**: Access advanced components with simple APIs.
+- **Data-viz**: Add responsive charts with a few lines of code.
+- **SEO**: Use our SEO components to simplify meta and schema setup.
+- **PRO**: Launch ready-made apps without minimal coding with Once UI Pro.
 
 [Get Once UI Pro](https://once-ui.com/pricing)
 
@@ -44,6 +43,7 @@ Learn how to build with Once UI at [docs.once-ui.com](https://docs.once-ui.com/o
 ## Get started
 
 Clone the starter template from GitHub:
+
 ```bash
 git clone https://github.com/once-ui-system/nextjs-starter.git
 ```
