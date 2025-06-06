@@ -1,3 +1,4 @@
+<!-- GitAds-Verify: ZEUY4V5RFZP6CQA9OISKDU8JG1X7E96A -->
 # Once UI for Next.js | Klarity-AI
 
 A design system for indie builders who move fast and break limits without neglecting quality. Once UI combines the simplicity of low-code with the power of code: write 70% less compared to shadcn + tailwind.
