@@ -15,7 +15,7 @@ const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 
 export default function Workflow() {
   return (
-    <Column center fillWidth fillHeight gap="12" marginTop="32" maxWidth={100}>
+    <Column center fillWidth fillHeight gap="12" maxWidth={100}>
       {" "}
       <Flex maxWidth={30} fillWidth height={6} maxHeight={6} center>
         {" "}
@@ -333,7 +333,7 @@ export default function Workflow() {
           <Flex
             fitWidth
             vertical="center"
-           fitHeight
+            fitHeight
             horizontal="center"
             overflow="hidden" //background="accent-strong"
           >
