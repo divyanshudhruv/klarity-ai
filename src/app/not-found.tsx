@@ -7,6 +7,7 @@ import {
   Flex,
   AutoScroll,
   Media,
+  LetterFx,
 } from "@/once-ui/components";
 import { Lexend } from "next/font/google";
 import localFont from "next/font/local";
@@ -50,7 +51,12 @@ export default function Integrations() {
             letterSpacing: "-0.02em",
           }}
         >
+               <LetterFx
+  speed="medium"
+  trigger="instant"
+  charset={["X", "$", "@", "a", "H", "z", "0", "y", "#", "?", "*", "0", "1", "+"]}>
           Page Not Found
+          </LetterFx>
         </Text>
         <Flex></Flex>
         <Text

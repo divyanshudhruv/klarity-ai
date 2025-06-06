@@ -4,11 +4,14 @@ const nextConfig = {
     compiler: "modern",
     silenceDeprecations: ["legacy-js-api"],
   },
+  experimental: {
+    authInterrupts: true,
+  },
 };
 
 export default {
   ...nextConfig,
   images: {
-    domains: ['bl-prod-images.azureedge.net'],
+    domains: ["bl-prod-images.azureedge.net"],
   },
 };
