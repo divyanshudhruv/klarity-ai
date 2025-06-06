@@ -50,6 +50,7 @@ export default function Hero() {
         vertical="start"
         fillWidth
         paddingY="12"
+        maxWidth={60}
         gap="32"
       >
         <Text
