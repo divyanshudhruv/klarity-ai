@@ -4,12 +4,9 @@ import {
   Button,
   Column,
   Badge,
-
   Row,
   Flex,
-
   Media,
-
 } from "@/once-ui/components";
 import { Lexend, Poppins, DM_Sans, Lora } from "next/font/google";
 import localFont from "next/font/local";
@@ -28,7 +25,7 @@ export default function Hero() {
       vertical="start"
       horizontal="center"
       fitHeight
-      fillWidth
+      fitWidth
       paddingX="56"
       paddingY="64"
     >
@@ -50,6 +47,7 @@ export default function Hero() {
       <Column
         horizontal="center"
         vertical="start"
+        fitWidth
         paddingY="12"
         maxWidth={60}
         gap="32"
@@ -97,7 +95,6 @@ export default function Hero() {
           </Text>
         </Row>
       </Column>
-      
     </Column>
   );
 }

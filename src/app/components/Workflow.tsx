@@ -2,15 +2,13 @@
 import {
   Text,
   Column,
-  
   Row,
   Flex,
-
   Media,
   SegmentedControl,
   Scroller,
 } from "@/once-ui/components";
-import { Lexend, DM_Sans  } from "next/font/google";
+import { Lexend, DM_Sans } from "next/font/google";
 
 const lexend = Lexend({ subsets: ["latin"], weight: ["300"] });
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "700"] });
@@ -35,28 +33,31 @@ export default function Workflow() {
         center
         border="neutral-medium"
         borderStyle="dashed"
-        fillWidth
+        fitWidth
         fitHeight
         radius="m"
         padding="m"
+        maxWidth={100}
       >
         <Row
           horizontal="center"
+          gap="128"
           vertical="center"
-          fillWidth
+          fitWidth
           fitHeight
           radius="xl"
           style={{ backgroundColor: "#F0EEEC" }}
           wrap={true}
+          paddingY="32"
+          paddingX="32"
         >
           <Column
             fillWidth
             fillHeight
             paddingY="20"
-            width={40}
-            height={50}
-            // background="brand-strong"
+            width={30}
             horizontal="start"
+            // background="accent-strong"
           >
             {" "}
             <Scroller
@@ -330,12 +331,11 @@ export default function Workflow() {
             </Scroller>
           </Column>
           <Flex
-            maxWidth={50}
-            width={63}
+            fitWidth
             vertical="center"
-            height={50}
-            horizontal="end"
-            overflow="hidden"
+           fitHeight
+            horizontal="center"
+            overflow="hidden" //background="accent-strong"
           >
             <Media
               src="https://cdn.dribbble.com/userupload/43497398/file/original-ca1c8327bd8dcfb55bddfe9f8169f2e6.png?resize=1024x768&vertical=center"
@@ -344,8 +344,8 @@ export default function Workflow() {
               radius="xl"
               bottomLeftRadius="xl"
               fillWidth
-              width={45}
-              height={45}
+              width={42}
+              height={42}
             />
           </Flex>
         </Row>
