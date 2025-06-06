@@ -24,8 +24,8 @@ export default function Hero() {
     <Column
       vertical="start"
       horizontal="center"
+      fillWidth
       fitHeight
-      fitWidth
       paddingX="56"
       paddingY="64"
       paddingBottom="32"
@@ -48,9 +48,8 @@ export default function Hero() {
       <Column
         horizontal="center"
         vertical="start"
-        fitWidth
+        fillWidth
         paddingY="12"
-        maxWidth={60}
         gap="32"
       >
         <Text
@@ -60,7 +59,7 @@ export default function Hero() {
         >
           <center>Transform Digital Noise. Gain Actionable Klarity Now.</center>
         </Text>
-        <Flex maxWidth={45}>
+        <Flex maxWidth={45} fillWidth >
           {" "}
           <Text
             variant="heading-default-l"
@@ -83,13 +82,13 @@ export default function Hero() {
         >
           <Text variant="label-default-xl">Start for free</Text>
         </Button>
-         <Row gap="16" marginTop="12">
+        <Row gap="16" marginTop="12">
           <Media
             src="https://app.wordware.ai/producthunt-badge-featured.svg"
             width={13.95}
             height={3}
           ></Media>
-           <Media
+          <Media
             src="https://app.wordware.ai/producthunt-badge-year.svg"
             width={12.8}
             height={2.8}
@@ -107,7 +106,6 @@ export default function Hero() {
             Backed by YC
           </Text>
         </Row>
-       
       </Column>
     </Column>
   );

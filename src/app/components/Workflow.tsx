@@ -9,7 +9,7 @@ import {
   Scroller,
 } from "@/once-ui/components";
 import { Lexend, DM_Sans } from "next/font/google";
-
+import './css/workflow.css'
 const lexend = Lexend({ subsets: ["latin"], weight: ["300"] });
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -44,6 +44,7 @@ export default function Workflow() {
           gap="128"
           vertical="center"
           fitWidth
+          className="workflow-row"
           fitHeight
           radius="xl"
           style={{ backgroundColor: "#F0EEEC" }}
@@ -63,13 +64,13 @@ export default function Workflow() {
             <Scroller
               direction="column"
               fillHeight
-              width={30}
+              fitWidth
               paddingBottom="0"
               // background="accent-strong"
               vertical="center"
             >
               {" "}
-              <Column fitHeight paddingX="32">
+              <Column fitHeight paddingX="32" fitWidth>
                 <Text
                   variant="heading-default-l"
                   className={lexend.className}
@@ -336,14 +337,16 @@ export default function Workflow() {
             fitHeight
             horizontal="center"
             overflow="hidden" //background="accent-strong"
+            background="neutral-strong"
+            className="workflow-image-container"
           >
             <Media
               src="https://cdn.dribbble.com/userupload/43497398/file/original-ca1c8327bd8dcfb55bddfe9f8169f2e6.png?resize=1024x768&vertical=center"
               unoptimized
-              fillHeight
+              fitHeight
               radius="xl"
               bottomLeftRadius="xl"
-              fillWidth
+              fitWidth
               width={42}
               height={42}
             />
