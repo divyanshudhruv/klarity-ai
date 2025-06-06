@@ -7,6 +7,7 @@ import {
   Row,
   Flex,
   Media,
+  LetterFx,
 } from "@/once-ui/components";
 import { Lexend, Poppins, DM_Sans, Lora } from "next/font/google";
 import localFont from "next/font/local";
@@ -69,6 +70,7 @@ export default function Hero() {
             style={{ fontWeight: "lighter", lineHeight: "1.5" }}
           >
             <center>
+           
               Klarity-AI uses intelligent automation to parse your digital
               communications into clear, actionable insights, ensuring urgent
               work never slips through the cracks.

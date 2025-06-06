@@ -51,11 +51,27 @@ export default function Integrations() {
             letterSpacing: "-0.02em",
           }}
         >
-               <LetterFx
-  speed="medium"
-  trigger="instant"
-  charset={["X", "$", "@", "a", "H", "z", "0", "y", "#", "?", "*", "0", "1", "+"]}>
-          Page Not Found
+          <LetterFx
+            speed="medium"
+            trigger="instant"
+            charset={[
+              "X",
+              "$",
+              "@",
+              "a",
+              "H",
+              "z",
+              "0",
+              "y",
+              "#",
+              "?",
+              "*",
+              "0",
+              "1",
+              "+",
+            ]}
+          >
+            Unauthorized
           </LetterFx>
         </Text>
         <Flex></Flex>
@@ -64,27 +80,25 @@ export default function Integrations() {
           className={lexend.className}
           onBackground="neutral-medium"
         >
-          The page you're looking for doesn't exist or you don't have permission
-          to see it.{" "}
+          You are not authorized to view this page.
         </Text>
-        <Row center gap="2" style={{ scale: "1.13" }} paddingY="16">
-          {" "}
-          <Button
-            variant="primary"
-            style={{ marginLeft: "16px" }}
-            size="l"
-            onClick={() => (window.location.href = "/")}
-          >
-            <Text variant="label-default-xl">Go to dashboard</Text>
-          </Button>{" "}
-          <Button
-            variant="secondary"
-            style={{ marginLeft: "16px" }}
-            size="l"
-            onClick={() => (window.location.href = "/o/dashboard")}
-          >
-            <Text variant="label-default-xl">Explore more</Text>
-          </Button>
+        <Row
+          center
+          fillWidth
+          style={{ scale: "1.13" }}
+          paddingY="16"
+          minWidth={10}
+        >
+          <Flex minWidth={20} maxWidth={20} center fillWidth>
+            <Button
+              variant="primary"
+              style={{ width: "100%" }}
+              size="l"
+              onClick={() => window.history.back()}
+            >
+              <Text variant="label-default-xl">Back</Text>
+            </Button>{" "}
+          </Flex>
         </Row>
         {/* <Text
           variant="body-default-s"
