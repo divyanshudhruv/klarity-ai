@@ -1,3 +1,4 @@
+"use client";
 import {
   Text,
   Button,
@@ -27,7 +28,8 @@ export default function NavbarO() {
       borderBottom="neutral-medium"
       borderStyle="dashed"
     >
-      <Flex>
+      <Flex onClick={() => (window.location.href = "/")}
+        cursor="pointer">
         <Text
           variant="heading-strong-xl"
           style={{ fontSize: "32px" }}
@@ -42,9 +44,10 @@ export default function NavbarO() {
         name="Divyanshu Dhruv"
         subline="Design Engineer"
         placement="right-end"
-        loading ={false}
-        
-        avatarProps={{ src: "https://bl-prod-images.azureedge.net/v1.0/users/05de840f-46e8-4476-a18c-b90d09c1b3b9/0x96" }}
+        loading={false}
+        avatarProps={{
+          src: "https://bl-prod-images.azureedge.net/v1.0/users/05de840f-46e8-4476-a18c-b90d09c1b3b9/0x96",
+        }}
         dropdown={
           <Column gap="4" padding="4" minWidth={10}>
             <Button
@@ -60,7 +63,7 @@ export default function NavbarO() {
                 <i className="ri-settings-line"></i>&nbsp;&nbsp;Settings
               </Text>
             </Button>
-              <Button
+            <Button
               size="m"
               weight="default"
               variant="secondary"
@@ -86,7 +89,6 @@ export default function NavbarO() {
                 <i className="ri-door-line"></i>&nbsp;&nbsp;Log out
               </Text>
             </Button>{" "}
-          
           </Column>
         }
       />

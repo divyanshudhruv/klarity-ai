@@ -12,6 +12,7 @@ import {
   Spinner,
   useToast,
   SmartLink,
+  Line,
 } from "@/once-ui/components";
 import { Lexend, Poppins, DM_Sans, Lora } from "next/font/google";
 import localFont from "next/font/local";
@@ -99,7 +100,11 @@ export default function Hero() {
           onBackground="neutral-medium"
           className={lexend.className}
         >
-          Create a free <SmartLink href={"/"}><u>Klarity</u></SmartLink> account
+          Create a free{" "}
+          <SmartLink href={"/"}>
+            <u>Klarity</u>
+          </SmartLink>{" "}
+          account
         </Text>
         <Input
           id="input-1"
@@ -154,16 +159,26 @@ export default function Hero() {
           </Row>
         </Button>
         <Flex></Flex>
-        <Row fillWidth center>
+        <Column fillWidth center>
           {" "}
-          <Text
-            variant="label-default-xl"
-            className={lexend.className}
-            onBackground="neutral-weak"
-          >
-            OR CONTINUE WITH
-          </Text>
-        </Row>{" "}
+          <Line
+            fillWidth
+            width={25}
+            style={{ marginTop: "00px", position: "absolute" }}
+            zIndex={9}
+          ></Line>
+          <Flex zIndex={10}>
+            {" "}
+            <Text
+              variant="label-default-xl"
+              className={lexend.className}
+              onBackground="neutral-weak"
+              style={{backgroundColor:"#FAF8F6"}}
+            >
+              OR CONTINUE WITH
+            </Text>
+          </Flex>
+        </Column>{" "}
         <Flex></Flex>
         <Button
           size="l"

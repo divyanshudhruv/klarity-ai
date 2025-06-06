@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { Text, Button, Row, Flex } from "@/once-ui/components";
 import { MegaMenu } from "@/once-ui/modules";
 import { Lexend, Poppins, DM_Sans } from "next/font/google";
@@ -212,7 +212,7 @@ export default function Navbar() {
       borderBottom="neutral-medium"
       borderStyle="dashed"
     >
-      <Flex>
+      <Flex onClick={() => (window.location.href = "/")} cursor="pointer">
         <Text
           variant="heading-strong-xl"
           style={{ fontSize: "32px" }}
