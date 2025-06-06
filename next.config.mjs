@@ -6,4 +6,9 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default {
+  ...nextConfig,
+  images: {
+    domains: ['bl-prod-images.azureedge.net'],
+  },
+};

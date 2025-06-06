@@ -2,7 +2,13 @@
 
 import React from "react";
 import classNames from "classnames";
-import { Flex, DropdownWrapper, User, UserProps, DropdownWrapperProps } from ".";
+import {
+  Flex,
+  DropdownWrapper,
+  User,
+  UserProps,
+  DropdownWrapperProps,
+} from ".";
 import styles from "./UserMenu.module.scss";
 import { Placement } from "@floating-ui/react-dom";
 
@@ -43,9 +49,13 @@ const UserMenu: React.FC<UserMenuProps> = ({
           padding="4"
           radius="full"
           cursor="interactive"
-          border={selected ? "neutral-medium" : "transparent"}
+          border={selected ? "neutral-strong" : "transparent"}
           background={selected ? "neutral-strong" : "transparent"}
-          className={classNames(className || "", selected ? styles.selected : "", styles.wrapper)}
+          className={classNames(
+            className || "",
+            selected ? styles.selected : "",
+            styles.wrapper
+          )}
           style={style}
         >
           <User {...userProps} />
