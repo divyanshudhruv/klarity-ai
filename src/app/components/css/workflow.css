@@ -1,0 +1,8 @@
+@media (max-width: 1465px) {
+    .workflow-row {
+        max-width: 640px; 
+    }
+    .workflow-image-container{
+        display: none;
+    }
+}

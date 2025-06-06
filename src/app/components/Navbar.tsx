@@ -1,10 +1,5 @@
-import {
-  Text,
-  Button,
-  
-  Row,
-  Flex,
-} from "@/once-ui/components";
+'use client'
+import { Text, Button, Row, Flex } from "@/once-ui/components";
 import { MegaMenu } from "@/once-ui/modules";
 import { Lexend, Poppins, DM_Sans } from "next/font/google";
 
@@ -208,7 +203,7 @@ export default function Navbar() {
   ];
   return (
     <Row
-    zIndex={10}
+      zIndex={10}
       vertical="center"
       horizontal="space-between"
       height={5}
@@ -401,6 +396,7 @@ export default function Navbar() {
           variant="tertiary"
           className={poppins.className}
           style={{ marginLeft: "16px" }}
+          onClick={() => (window.location.href = "/auth/signin")}
         >
           <Text variant="label-default-xl">SignIn</Text>
         </Button>
