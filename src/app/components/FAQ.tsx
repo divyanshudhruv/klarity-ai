@@ -29,6 +29,7 @@ export default function Workflow() {
       marginTop="64"
       marginBottom="64"
       maxWidth={100}
+      style={{maxWidth: "80vw"}}
     >
       <Text
         variant="heading-default-l"
@@ -51,7 +52,8 @@ export default function Workflow() {
         Curious about klarity-AI? <br />
         Let's clear things up.
       </Text>
-      <Column fitWidth maxWidth={60} marginTop="32">
+      <Column fitWidth maxWidth={60} marginTop="32"       style={{maxWidth: "67vw"}}
+>
         <Accordion
           title={
             <>

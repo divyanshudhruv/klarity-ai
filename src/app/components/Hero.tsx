@@ -60,7 +60,7 @@ export default function Hero() {
         >
           <center>Transform Digital Noise. Gain Actionable Klarity Now.</center>
         </Text>
-        <Flex maxWidth={45} fillWidth >
+        <Flex maxWidth={45} fillWidth>
           {" "}
           <Text
             variant="heading-default-l"
@@ -80,6 +80,7 @@ export default function Hero() {
           size="l"
           style={{ paddingInline: "50px", paddingBlock: "25px" }}
           className={poppins.className}
+          onClick={() => (window.location.href = "/o/dashboard")}
         >
           <Text variant="label-default-xl">Start for free</Text>
         </Button>
