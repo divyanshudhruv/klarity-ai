@@ -61,6 +61,7 @@ export default function Footer() {
         style={{
           fontSize: "180px",
           lineHeight: "1.2",
+          marginTop: "-24px",
           textAlign: "center",
           color: "#363636",
         }}

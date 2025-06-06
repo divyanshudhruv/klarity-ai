@@ -12,7 +12,6 @@ import {
 } from "@/once-ui/components";
 import NavbarO from "@/app/components/NavbarO";
 
-import "./style.css";
 
 export default function Home() {
   return (
