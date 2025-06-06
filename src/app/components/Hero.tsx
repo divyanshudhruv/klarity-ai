@@ -28,6 +28,7 @@ export default function Hero() {
       fitWidth
       paddingX="56"
       paddingY="64"
+      paddingBottom="32"
     >
       <Badge
         id="badge-1"
@@ -82,6 +83,18 @@ export default function Hero() {
         >
           <Text variant="label-default-xl">Start for free</Text>
         </Button>
+         <Row gap="16" marginTop="12">
+          <Media
+            src="https://app.wordware.ai/producthunt-badge-featured.svg"
+            width={13.95}
+            height={3}
+          ></Media>
+           <Media
+            src="https://app.wordware.ai/producthunt-badge-year.svg"
+            width={12.8}
+            height={2.8}
+          ></Media>
+        </Row>
         <Row gap="8" center>
           {" "}
           <Media
@@ -94,6 +107,7 @@ export default function Hero() {
             Backed by YC
           </Text>
         </Row>
+       
       </Column>
     </Column>
   );

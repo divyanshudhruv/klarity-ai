@@ -1,5 +1,5 @@
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL = "https://demo.once-ui.com";
+const baseURL = "https://klarity-ai.vercel.app";
 
 // Import and set font for each variant
 import { Geist } from "next/font/google";
@@ -78,29 +78,29 @@ const effects = {
     height: "2",
   },
 };
-
 // metadata for pages
 const meta = {
   home: {
     path: "/",
-    title: "Once UI for Next.js",
+    title: "Klarity-AI: Transform Digital Chaos into Actionable Insights",
+    keywords:
+      "Klarity-AI, AI, automation, digital clarity, task management, notes, productivity, message parsing, email to-do, chat to-do",
     description:
-      "An open-source design system and component library for Next.js that emphasizes easy styling and accessibility in UI development.",
-    image: "/og/home.jpg",
-    canonical: "https://once-ui.com",
+      "Klarity-AI transforms your digital messages, chats, and emails into clear, actionable tasks and notes. Leverage intelligent AI automation to ensure urgent work never slips through the cracks.",
+    image: "/og/home.jpg", // Assuming an appropriate image path for Klarity-AI
+    canonical: "https://klarity-ai.vercel.app", // Placeholder for Klarity-AI's domain
     robots: "index,follow",
-    alternates: [{ href: "https://once-ui.com", hrefLang: "en" }],
+    alternates: [{ href: "https://klarity-ai.dev", hrefLang: "en" }],
   },
   // add more routes and reference them in page.tsx
 };
-
 // default schema data
 const schema = {
   logo: "",
-  type: "Organization",
-  name: "Once UI",
+  type: "Website",
+  name: "Klarity-AI",
   description: meta.home.description,
-  email: "lorant@once-ui.com",
+  email: "divyanshudhruv@proton.me",
 };
 
 // social links
@@ -110,4 +110,4 @@ const social = {
   discord: "https://discord.com/invite/5EyAQ4eNdS",
 };
 
-export { baseURL, font, style, meta, schema, social, effects };
+export { baseURL, font, style, meta, schema,social, effects };
