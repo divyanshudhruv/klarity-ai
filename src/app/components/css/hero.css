@@ -1,0 +1,24 @@
+@media (max-width: 950px) {
+    .hero-text {
+        font-size: 60px !important;
+    }
+}
+
+@media (max-width: 850px) {
+    .hero-text {
+        font-size: 45px !important;
+    }
+}
+
+@media (max-width: 550px) {
+    .hero-text {
+        font-size: 38px !important;
+    }
+}
+
+
+@media (max-width: 450px) {
+    .badge{
+        scale: 0.9 !important;
+    }
+}
