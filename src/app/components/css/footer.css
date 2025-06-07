@@ -1,0 +1,19 @@
+@media (max-width: 800px) {
+    .footer-text {
+        font-size: 100px !important;
+        margin-block: 10px !important;
+    }
+
+    .footer-links {
+        align-items: center !important;
+        justify-content: center !important;
+        margin-top: 10px;
+    }
+
+    .footer-bottom-text {
+        flex-wrap: wrap !important;
+        flex-direction: column !important;
+        gap: 10px;
+        min-width: fit-content !important;
+    }
+}
