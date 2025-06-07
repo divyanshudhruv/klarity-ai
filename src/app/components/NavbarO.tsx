@@ -9,6 +9,7 @@ import {
   Icon,
   Kbd,
   Option,
+  useToast,
 } from "@/once-ui/components";
 import { MegaMenu } from "@/once-ui/modules";
 import { Lexend, Poppins, DM_Sans } from "next/font/google";
@@ -19,6 +20,7 @@ const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 import { useEffect, useState } from "react";
 
 export default function NavbarO() {
+  const { addToast } = useToast();
   const [user, setUser] = useState({
     name: "User",
     avatar_url: "",
@@ -65,6 +67,19 @@ export default function NavbarO() {
     fetchUser();
   }, []);
 
+  const signOutFromSupabase = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      addToast({
+        variant: "danger",
+        message: "Failed to log out. Please try again.",
+        
+      });
+    } else {
+      window.location.href = "/";
+      addToast({ variant: "success", message: "Logged out successfully!" });
+    }
+  };
   return (
     <Row
       zIndex={10}
@@ -132,6 +147,9 @@ export default function NavbarO() {
               fillWidth
               style={{ borderRadius: "10px" }}
               horizontal="start"
+              onClick={() => {
+                signOutFromSupabase();
+              }}
             >
               <Text variant="label-default-s" onBackground="neutral-weak">
                 {" "}
