@@ -1,3 +1,4 @@
+"use client";
 import {
   Heading,
   Text,
@@ -11,7 +12,8 @@ import {
   IconButton,
 } from "@/once-ui/components";
 import NavbarO from "@/app/components/NavbarO";
-
+import { fetchUser } from "@/app/lib/fetchUser";
+import { useEffect } from "react";
 
 export default function Home() {
   return (

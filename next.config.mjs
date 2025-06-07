@@ -12,6 +12,6 @@ const nextConfig = {
 export default {
   ...nextConfig,
   images: {
-    domains: ["bl-prod-images.azureedge.net"],
+    domains: ["bl-prod-images.azureedge.net", "lh3.googleusercontent.com"],
   },
 };
