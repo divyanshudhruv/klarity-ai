@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Report a bug in Once UI
+about: Report a bug in Klarity-AI
 ---
 
 ### Thank you for taking the time to fill out this bug report.
