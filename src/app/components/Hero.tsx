@@ -19,7 +19,7 @@ const tiempos = localFont({
 const lexend = Lexend({ subsets: ["latin"], weight: ["300"] });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "700"] });
-
+import "./css/hero.css";
 export default function Hero() {
   return (
     <Column
@@ -39,6 +39,8 @@ export default function Hero() {
         paddingY="8"
         textVariant="label-default-xl"
         zIndex={9}
+        className="badge"
+        style={{textAlign: "center"}}
       >
         <Text className={dmSans.className} onBackground="neutral-medium">
           Over 200+ integrations | Explore more{" "}
@@ -55,7 +57,7 @@ export default function Hero() {
         gap="32"
       >
         <Text
-          className={tiempos.className}
+          className={`hero-text ` + tiempos.className}
           onBackground="neutral-strong"
           style={{ fontSize: "70px", color: "#171717" }}
         >
@@ -70,7 +72,6 @@ export default function Hero() {
             style={{ fontWeight: "lighter", lineHeight: "1.5" }}
           >
             <center>
-           
               Klarity-AI uses intelligent automation to parse your digital
               communications into clear, actionable insights, ensuring urgent
               work never slips through the cracks.
@@ -86,7 +87,7 @@ export default function Hero() {
         >
           <Text variant="label-default-xl">Start for free</Text>
         </Button>
-        <Row gap="16" marginTop="12">
+        <Row gap="16" marginTop="12" wrap={true} fillWidth center>
           <Media
             src="https://app.wordware.ai/producthunt-badge-featured.svg"
             width={13.95}

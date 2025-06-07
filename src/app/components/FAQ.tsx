@@ -19,6 +19,7 @@ const tiempos = localFont({
   weight: "100",
   style: "normal",
 });
+import "./css/faq.css";
 export default function Workflow() {
   const faqData = [
     {
@@ -87,7 +88,7 @@ export default function Workflow() {
         Frequently asked questions
       </Text>{" "}
       <Text
-        className={tiempos.className}
+        className={`hero-text `+tiempos.className}
         variant="heading-default-xl"
         style={{
           fontSize: "60px",

@@ -16,7 +16,7 @@ const tiempos = localFont({
   style: "normal",
 });
 const lexend = Lexend({ subsets: ["latin"], weight: ["300"] });
-
+import "./css/integrations.css";
 export default function Integrations() {
   return (
     <Flex
@@ -28,7 +28,7 @@ export default function Integrations() {
       radius="m"
       padding="m"
       style={{ maxWidth: "93vw" }}
-      
+
     >
       <Column
         horizontal="center"
@@ -51,7 +51,7 @@ export default function Integrations() {
         <Flex center paddingX="32">
           {" "}
           <Text
-            className={tiempos.className}
+            className={`hero-text `+tiempos.className}
             variant="heading-default-xl"
             style={{ fontSize: "60px", color: "#171717", lineHeight: "1" }}
           >
