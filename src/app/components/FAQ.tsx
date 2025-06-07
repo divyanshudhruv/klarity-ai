@@ -20,6 +20,53 @@ const tiempos = localFont({
   style: "normal",
 });
 export default function Workflow() {
+  const faqData = [
+    {
+      question: "What does Klarity-AI do?",
+      answer:
+        "It converts digital messages, chats, and emails into clear, actionable to-dos and notes, identifying tasks, deadlines, and key information.",
+    },
+    {
+      question: "How does Klarity-AI know what's urgent?",
+      answer:
+        "Advanced AI analyzes text for context, actions, and deadlines, assigning an urgency score. It also learns your personal preferences over time.",
+    },
+    {
+      question: "Is my communication data private and secure?",
+      answer:
+        "Yes, data is stored securely in your private Firestore account. We only process the information you explicitly consent to share.",
+    },
+    {
+      question: "How does it help avoid missed tasks?",
+      answer:
+        "By automatically parsing messages and sending proactive alerts for urgent items, Klarity-AI ensures nothing important slips through.",
+    },
+    {
+      question: "Can it summarize long conversations?",
+      answer:
+        "Yes, Klarity-AI uses Generative AI to provide concise summaries of longer texts, giving you quick overviews.",
+    },
+    {
+      question: "Does Klarity-AI integrate with other tools?",
+      answer:
+        "Yes, Klarity-AI integrates with popular productivity tools like Google Workspace, Slack, and Microsoft Teams to streamline your workflow.",
+    },
+    {
+      question: "Can I customize how Klarity-AI works?",
+      answer:
+        "Absolutely! You can tailor its behavior by setting preferences for task categorization, urgency levels, and notification settings.",
+    },
+    {
+      question: "Is Klarity-AI suitable for teams?",
+      answer:
+        "Yes, Klarity-AI offers collaborative features for teams, enabling shared task management and communication insights.",
+    },
+    {
+      question: "How do I get started with Klarity-AI?",
+      answer:
+        "Getting started is easy! Sign up on our website, connect your communication channels, and let Klarity-AI start organizing your tasks.",
+    },
+  ];
   return (
     <Column
       center
@@ -29,7 +76,7 @@ export default function Workflow() {
       marginTop="64"
       marginBottom="64"
       maxWidth={100}
-      style={{maxWidth: "80vw"}}
+      style={{ maxWidth: "80vw" }}
     >
       <Text
         variant="heading-default-l"
@@ -52,192 +99,30 @@ export default function Workflow() {
         Curious about klarity-AI? <br />
         Let's clear things up.
       </Text>
-      <Column fitWidth maxWidth={60} marginTop="32"       style={{maxWidth: "67vw"}}
->
-        <Accordion
-          title={
-            <>
+      <Column
+        fitWidth
+        maxWidth={60}
+        marginTop="32"
+        style={{ maxWidth: "67vw" }}
+      >
+        {faqData.map((faq, index) => (
+          <Accordion
+            key={index}
+            size="l"
+            title={
               <Text
                 variant="body-default-l"
-                style={{ fontWeight: "600" }}
+                style={{ fontWeight: "500" }}
                 className={lexend.className}
                 onBackground="neutral-strong"
               >
-                What does Klarity-AI do?
+                {faq.question}
               </Text>
-            </>
-          }
-          size="l"
-        >
-          <Text onBackground="neutral-weak">
-            It converts digital messages, chats, and emails into clear,
-            actionable to-dos and notes, identifying tasks, deadlines, and key
-            information.
-          </Text>
-        </Accordion>
-        <Accordion
-          title={
-            <>
-              <Text
-                variant="body-default-l"
-                style={{ fontWeight: "600" }}
-                className={lexend.className}
-                onBackground="neutral-strong"
-              >
-                How does Klarity-AI know what's urgent?
-              </Text>
-            </>
-          }
-          size="l"
-        >
-          <Text onBackground="neutral-weak">
-            Advanced AI analyzes text for context, actions, and deadlines,
-            assigning an urgency score. It also learns your personal preferences
-            over time.
-          </Text>
-        </Accordion>
-        <Accordion
-          title={
-            <>
-              <Text
-                variant="body-default-l"
-                style={{ fontWeight: "600" }}
-                className={lexend.className}
-                onBackground="neutral-strong"
-              >
-                Is my communication data private and secure?
-              </Text>
-            </>
-          }
-          size="l"
-        >
-          <Text onBackground="neutral-weak">
-            Yes, data is stored securely in your private Firestore account. We
-            only process the information you explicitly consent to share.
-          </Text>
-        </Accordion>
-        <Accordion
-          title={
-            <>
-              <Text
-                variant="body-default-l"
-                style={{ fontWeight: "600" }}
-                className={lexend.className}
-                onBackground="neutral-strong"
-              >
-                How does it help avoid missed tasks?
-              </Text>
-            </>
-          }
-          size="l"
-        >
-          <Text onBackground="neutral-weak">
-            By automatically parsing messages and sending proactive alerts for
-            urgent items, Klarity-AI ensures nothing important slips through.
-          </Text>
-        </Accordion>
-        <Accordion
-          title={
-            <>
-              <Text
-                variant="body-default-l"
-                style={{ fontWeight: "600" }}
-                className={lexend.className}
-                onBackground="neutral-strong"
-              >
-                Can it summarize long conversations?
-              </Text>
-            </>
-          }
-          size="l"
-        >
-          <Text onBackground="neutral-weak">
-            Yes, Klarity-AI uses Generative AI to provide concise summaries of
-            longer texts, giving you quick overviews.
-          </Text>
-        </Accordion>
-        <Accordion
-          title={
-            <>
-              <Text
-                variant="body-default-l"
-                style={{ fontWeight: "600" }}
-                className={lexend.className}
-                onBackground="neutral-strong"
-              >
-                Does Klarity-AI integrate with other tools?
-              </Text>
-            </>
-          }
-          size="l"
-        >
-          <Text onBackground="neutral-weak">
-            Yes, Klarity-AI integrates with popular productivity tools like
-            Google Workspace, Slack, and Microsoft Teams to streamline your
-            workflow.
-          </Text>
-        </Accordion>
-        <Accordion
-          size="l"
-          title={
-            <>
-              <Text
-                variant="body-default-l"
-                style={{ fontWeight: "600" }}
-                className={lexend.className}
-                onBackground="neutral-strong"
-              >
-                Can I customize how Klarity-AI works?
-              </Text>
-            </>
-          }
-        >
-          <Text onBackground="neutral-weak">
-            Absolutely! You can tailor its behavior by setting preferences for
-            task categorization, urgency levels, and notification settings.
-          </Text>
-        </Accordion>
-        <Accordion
-          size="l"
-          title={
-            <>
-              <Text
-                variant="body-default-l"
-                style={{ fontWeight: "600" }}
-                className={lexend.className}
-                onBackground="neutral-strong"
-              >
-                Is Klarity-AI suitable for teams?
-              </Text>
-            </>
-          }
-        >
-          <Text onBackground="neutral-weak">
-            Yes, Klarity-AI offers collaborative features for teams, enabling
-            shared task management and communication insights.
-          </Text>
-        </Accordion>
-        <Accordion
-          size="l"
-          title={
-            <>
-              <Text
-                variant="body-default-l"
-                style={{ fontWeight: "600" }}
-                className={lexend.className}
-                onBackground="neutral-strong"
-              >
-                How do I get started with Klarity-AI?
-              </Text>
-            </>
-          }
-        >
-          <Text onBackground="neutral-weak">
-            Getting started is easy! Sign up on our website, connect your
-            communication channels, and let Klarity-AI start organizing your
-            tasks.
-          </Text>
-        </Accordion>
+            }
+          >
+            <Text onBackground="neutral-weak">{faq.answer}</Text>
+          </Accordion>
+        ))}
       </Column>
     </Column>
   );

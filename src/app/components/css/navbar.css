@@ -1,0 +1,18 @@
+@media (max-width: 1050px) {
+    .mega-menu {
+        display: none !important;
+    }
+
+    .nav-icon {
+        display: flex !important;
+    }
+}
+
+
+.mega-menu {
+    display: flex ;
+}
+
+.nav-icon {
+    display: none ;
+}

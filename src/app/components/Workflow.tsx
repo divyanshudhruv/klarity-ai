@@ -9,7 +9,7 @@ import {
   Scroller,
 } from "@/once-ui/components";
 import { Lexend, DM_Sans } from "next/font/google";
-import './css/workflow.css'
+import "./css/workflow.css";
 const lexend = Lexend({ subsets: ["latin"], weight: ["300"] });
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -58,6 +58,8 @@ export default function Workflow() {
             paddingY="20"
             width={30}
             horizontal="start"
+            zIndex={10}
+            overflow="hidden"
             // background="accent-strong"
           >
             {" "}
@@ -70,35 +72,42 @@ export default function Workflow() {
               vertical="center"
             >
               {" "}
-              <Column fitHeight paddingX="32" fitWidth>
-                <Text
-                  variant="heading-default-l"
-                  className={lexend.className}
-                  marginBottom="8"
-                >
-                  Describe Once, Automate Forever
-                </Text>
-                <Text
-                  variant="label-default-xs"
-                  className={dmSans.className}
-                  onBackground="neutral-weak"
-                  style={{ fontSize: "15px" }}
-                >
-                  Klarity-AI empowers teams to focus on what matters most by
-                  turning digital chaos into actionable clarity. Streamline your
-                  workflows and enhance productivity effortlessly.
-                  <br />
-                  <br />
-                  • Automate task creation from emails and messages
-                  <br />
-                  • Integrate with your favorite tools and platforms
-                  <br />
-                  • Leverage AI to prioritize and organize tasks intelligently
-                  <br />
-                  <br />
-                  Klarity-AI captures every crucial task. No important work
-                  slips.
-                </Text>
+              <Column
+                fitHeight
+                paddingX="32"
+                fitWidth
+                className="workflow-column"
+              >
+                <Column className="workflow-text-column" zIndex={9}>
+                  <Text
+                    variant="heading-default-l"
+                    className={lexend.className}
+                    marginBottom="8"
+                  >
+                    Describe Once, Automate Forever
+                  </Text>
+                  <Text
+                    variant="label-default-xs"
+                    className={dmSans.className}
+                    onBackground="neutral-weak"
+                    style={{ fontSize: "15px" }}
+                  >
+                    Klarity-AI empowers teams to focus on what matters most by
+                    turning digital chaos into actionable clarity. Streamline
+                    your workflows and enhance productivity effortlessly.
+                    <br />
+                    <br />
+                    • Automate task creation from emails and messages
+                    <br />
+                    • Integrate with your favorite tools and platforms
+                    <br />
+                    • Leverage AI to prioritize and organize tasks intelligently
+                    <br />
+                    <br />
+                    Klarity-AI captures every crucial task. No important work
+                    slips.
+                  </Text>
+                </Column>
                 <Flex fillWidth height={2}></Flex>
                 <Column gap="12">
                   <Row>

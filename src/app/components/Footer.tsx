@@ -23,6 +23,7 @@ const tiempos = localFont({
   weight: "100",
   style: "normal",
 });
+import "./css/footer.css";
 export default function Footer() {
   return (
     <Column
@@ -56,7 +57,7 @@ export default function Footer() {
         <Text variant="label-default-xl">Start automating today</Text>
       </Button>
       <Text
-        className={tiempos.className}
+        className={`footer-text ` + tiempos.className}
         variant="heading-default-xl"
         style={{
           fontSize: "180px",
@@ -74,6 +75,7 @@ export default function Footer() {
         fillWidth
         maxWidth={50}
         gap="12"
+        className="footer-links"
       >
         <SmartLink
           href="https://github.com/divyanshudhruv/klarity-ai"
@@ -119,7 +121,15 @@ export default function Footer() {
         marginBottom="16"
       ></Flex>
 
-      <Row vertical="center" horizontal="space-between" fillWidth maxWidth={50}>
+      <Row
+        vertical="center"
+        horizontal="space-between"
+        fitWidth
+        minWidth={50}
+        maxWidth={50}
+        wrap={true}
+        className="footer-bottom-text"
+      >
         <Row>
           <Text variant="label-default-s" onBackground="neutral-weak">
             © 2025 klarity-ai. All rights reserved. &nbsp;&nbsp;
@@ -145,7 +155,7 @@ export default function Footer() {
               style={{ scale: "1.2", color: "#A6A6A6" }}
             ></i>
           </IconButton>
-           <IconButton variant="ghost">
+          <IconButton variant="ghost">
             <i
               className="ri-book-line"
               style={{ scale: "1.1", color: "#A6A6A6" }}
