@@ -40,7 +40,7 @@ export default function Hero() {
         textVariant="label-default-xl"
         zIndex={9}
         className="badge"
-        style={{textAlign: "center"}}
+        style={{ textAlign: "center" }}
       >
         <Text className={dmSans.className} onBackground="neutral-medium">
           Over 200+ integrations | Explore more{" "}
@@ -85,7 +85,7 @@ export default function Hero() {
           className={poppins.className}
           onClick={() => (window.location.href = "/o/dashboard")}
         >
-          <Text variant="label-default-xl">Start for free</Text>
+          <Text variant="label-default-xl">Dashboard</Text>
         </Button>
         <Row gap="16" marginTop="12" wrap={true} fillWidth center>
           <Media
