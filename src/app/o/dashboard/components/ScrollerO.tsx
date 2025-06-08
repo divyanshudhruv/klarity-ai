@@ -97,6 +97,7 @@ export default function ScrollerO() {
         fitHeight
         radius="m"
         paddingY="xs"
+        marginBottom="20"
       >
         {" "}
         <Scroller
@@ -219,14 +220,14 @@ export default function ScrollerO() {
           </Flex>
         </Row>
       </Column>
-      <Column fillWidth fitHeight>
+      <Row fillWidth fitHeight center wrap={true} gap="32" maxWidth={100}>
         {window.location.hash === "#actionables" ? <Actionables /> : null}
         {window.location.hash === "#inbox" ? <Inbox /> : null}
         {window.location.hash === "#alerts" ? <Alerts /> : null}
         {window.location.hash === "#insights" ? <Insights /> : null}
         {window.location.hash === "#connections" ? <Connections /> : null}
         {window.location.hash === "#activity-log" ? <ActivityLog /> : null}
-      </Column>
+      </Row>
     </>
   );
 }
