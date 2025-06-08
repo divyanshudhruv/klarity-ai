@@ -1,0 +1,6 @@
+@media (max-width: 1285px) {
+    .scroller-search {
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}

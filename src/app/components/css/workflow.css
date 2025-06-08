@@ -1,0 +1,22 @@
+@media (max-width: 1465px) {
+    .workflow-row {
+        max-width: 640px;
+    }
+
+    .workflow-image-container {
+        display: none;
+    }
+}
+
+@media (max-width: 555px) {
+    .workflow-row {
+        max-width: 340px;
+    }
+/* 
+    .workflow-text-column {
+        min-width: 100% !important;
+        line-break: none !important;
+        overflow-x: scroll !important;
+        white-space: nowrap !important;
+    } */
+}

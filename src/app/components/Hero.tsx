@@ -7,6 +7,7 @@ import {
   Row,
   Flex,
   Media,
+  LetterFx,
 } from "@/once-ui/components";
 import { Lexend, Poppins, DM_Sans, Lora } from "next/font/google";
 import localFont from "next/font/local";
@@ -18,14 +19,14 @@ const tiempos = localFont({
 const lexend = Lexend({ subsets: ["latin"], weight: ["300"] });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "700"] });
-
+import "./css/hero.css";
 export default function Hero() {
   return (
     <Column
       vertical="start"
       horizontal="center"
+      fillWidth
       fitHeight
-      fitWidth
       paddingX="56"
       paddingY="64"
       paddingBottom="32"
@@ -38,6 +39,8 @@ export default function Hero() {
         paddingY="8"
         textVariant="label-default-xl"
         zIndex={9}
+        className="badge"
+        style={{ textAlign: "center" }}
       >
         <Text className={dmSans.className} onBackground="neutral-medium">
           Over 200+ integrations | Explore more{" "}
@@ -48,19 +51,19 @@ export default function Hero() {
       <Column
         horizontal="center"
         vertical="start"
-        fitWidth
+        fillWidth
         paddingY="12"
         maxWidth={60}
         gap="32"
       >
         <Text
-          className={tiempos.className}
+          className={`hero-text ` + tiempos.className}
           onBackground="neutral-strong"
           style={{ fontSize: "70px", color: "#171717" }}
         >
           <center>Transform Digital Noise. Gain Actionable Klarity Now.</center>
         </Text>
-        <Flex maxWidth={45}>
+        <Flex maxWidth={45} fillWidth>
           {" "}
           <Text
             variant="heading-default-l"
@@ -80,16 +83,17 @@ export default function Hero() {
           size="l"
           style={{ paddingInline: "50px", paddingBlock: "25px" }}
           className={poppins.className}
+          onClick={() => (window.location.href = "/o/dashboard")}
         >
-          <Text variant="label-default-xl">Start for free</Text>
+          <Text variant="label-default-xl">Dashboard</Text>
         </Button>
-         <Row gap="16" marginTop="12">
+        <Row gap="16" marginTop="12" wrap={true} fillWidth center>
           <Media
             src="https://app.wordware.ai/producthunt-badge-featured.svg"
             width={13.95}
             height={3}
           ></Media>
-           <Media
+          <Media
             src="https://app.wordware.ai/producthunt-badge-year.svg"
             width={12.8}
             height={2.8}
@@ -107,7 +111,6 @@ export default function Hero() {
             Backed by YC
           </Text>
         </Row>
-       
       </Column>
     </Column>
   );
