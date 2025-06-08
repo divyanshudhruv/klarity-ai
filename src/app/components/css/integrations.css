@@ -1,0 +1,17 @@
+@media (max-width: 950px) {
+    .hero-text {
+        font-size: 60px !important;
+    }
+}
+
+@media (max-width: 850px) {
+    .hero-text {
+        font-size: 46px !important;
+    }
+}
+
+@media (max-width: 550px) {
+    .hero-text {
+        font-size: 42px !important;
+    }
+}

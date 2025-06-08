@@ -16,7 +16,7 @@ import Integrations from "./components/Integrations";
 import Workflow from "./components/Workflow";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
-import "./style.css"
+import "./style.css";
 
 export default function Home() {
   return (

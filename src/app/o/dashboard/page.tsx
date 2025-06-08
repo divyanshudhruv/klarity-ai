@@ -1,3 +1,4 @@
+"use client";
 import {
   Heading,
   Text,
@@ -11,7 +12,9 @@ import {
   IconButton,
 } from "@/once-ui/components";
 import NavbarO from "@/app/components/NavbarO";
-
+import { fetchUser } from "@/app/lib/fetchUser";
+import { useEffect } from "react";
+import ScrollerO from "./components/ScrollerO";
 
 export default function Home() {
   return (
@@ -23,6 +26,7 @@ export default function Home() {
       </ScrollToTop>
       <Column horizontal="center" vertical="start" fitHeight fillWidth>
         <NavbarO />
+        <ScrollerO></ScrollerO>
       </Column>
     </>
   );

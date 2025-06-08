@@ -16,7 +16,7 @@ const tiempos = localFont({
   style: "normal",
 });
 const lexend = Lexend({ subsets: ["latin"], weight: ["300"] });
-
+import "./css/integrations.css";
 export default function Integrations() {
   return (
     <Flex
@@ -27,7 +27,8 @@ export default function Integrations() {
       fitHeight
       radius="m"
       padding="m"
-     
+      style={{ maxWidth: "93vw" }}
+
     >
       <Column
         horizontal="center"
@@ -35,7 +36,7 @@ export default function Integrations() {
         fillWidth
         fitHeight
         radius="xl"
-        style={{ backgroundColor: "#F0EEEC" }}
+        style={{ backgroundColor: "#F0EEEC", textAlign: "center" }}
         wrap={true}
         paddingY="64"
         gap="32"
@@ -47,13 +48,17 @@ export default function Integrations() {
         >
           Integrate with 5+ apps and services
         </Text>
-        <Text
-          className={tiempos.className}
-          variant="heading-default-xl"
-          style={{ fontSize: "60px", color: "#171717" }}
-        >
-          Connect your favorite apps:
-        </Text>
+        <Flex center paddingX="32">
+          {" "}
+          <Text
+            className={`hero-text `+tiempos.className}
+            variant="heading-default-xl"
+            style={{ fontSize: "60px", color: "#171717", lineHeight: "1" }}
+          >
+            Connect your favorite apps:
+          </Text>
+        </Flex>
+
         {/* <Fade
               base="overlay"
               fill
@@ -74,181 +79,193 @@ export default function Integrations() {
               to="left"
               zIndex={10}
             /> */}
-        <AutoScroll direction="row" marginTop="32" zIndex={9} >
-          <Flex
+        <AutoScroll
+          direction="row"
+          marginTop="32"
+          zIndex={9}
+          pause={false}
+          overflowX="hidden"
+        >
+          <Row center style={{ maxWidth: "100%" }}>
+            <Flex
+              width={5}
+              height={5}
+              radius="l"
+              style={{ backgroundColor: "#fff" }}
+              center
+              marginRight="32"
+              minWidth={5}
+              minHeight={5}
+            >
+              <Media
+                src="https://assets.pipedream.net/s.v0/app_OQYhq7/logo/orig"
+                width={2.5}
+                height={2.5}
+                unoptimized
+              ></Media>
+            </Flex>
+            <Flex
+              width={5}
+              height={5}
+              minWidth={5}
+              minHeight={5}
+              radius="l"
+              style={{ backgroundColor: "#fff" }}
+              center
+              marginRight="32"
+            >
+              <Media
+                src="https://assets.pipedream.net/s.v0/app_168hvn/logo/orig"
+                width={2.5}
+                height={2.5}
+                unoptimized
+              ></Media>
+            </Flex>
+            <Flex
+              width={5}
+              height={5}
+              minWidth={5}
+              minHeight={5}
+              radius="l"
+              style={{ backgroundColor: "#fff" }}
+              center
+              marginRight="32"
+            >
+              <Media
+                src="https://assets.pipedream.net/s.v0/app_mWnhY4/logo/orig"
+                width={2.5}
+                height={2.5}
+                unoptimized
+              ></Media>
+            </Flex>{" "}
+             <Flex
+              width={5}
+              minWidth={5}
+              minHeight={5}
+              height={5}
+              radius="l"
+              style={{ backgroundColor: "#fff" }}
+              center
+              marginRight="32"
+            >
+              <Media
+                src="https://assets.pipedream.net/s.v0/app_OD5hL6/logo/orig"
+                width={2.5}
+                height={2.5}
+                unoptimized
+              ></Media>
+            </Flex>{" "} 
+            <Flex
+              width={5}
+              height={5}
+              minWidth={5}
+              minHeight={5}
+              radius="l"
+              style={{ backgroundColor: "#fff" }}
+              center
+              marginRight="32"
+            >
+              <Media
+                src="https://assets.pipedream.net/s.v0/app_X7Lhxr/logo/orig"
+                width={2.5}
+                height={2.5}
+                unoptimized
+              ></Media>
+            </Flex>{" "}
+            <Flex
+              width={5}
+              height={5}
+              minWidth={5}
+              minHeight={5}
+              radius="l"
+              style={{ backgroundColor: "#fff" }}
+              center
+              marginRight="32"
+            >
+              <Media
+                src="https://assets.pipedream.net/s.v0/app_13Gh2V/logo/orig"
+                width={2.5}
+                height={2.5}
+                unoptimized
+              ></Media>
+            </Flex>{" "}
+            <Flex
+              width={5}
+              minWidth={5}
+              minHeight={5}
+              height={5}
+              radius="l"
+              style={{ backgroundColor: "#fff" }}
+              center
+              marginRight="32"
+            >
+              <Media
+                src="https://assets.pipedream.net/s.v0/app_mvNh0K/logo/orig"
+                width={2.5}
+                height={2.5}
+                unoptimized
+              ></Media>
+            </Flex>{" "}
+            <Flex
+              width={5}
+              minWidth={5}
+              minHeight={5}
+              height={5}
+              radius="l"
+              style={{ backgroundColor: "#fff" }}
+              center
+              marginRight="32"
+            >
+              <Media
+                src="https://assets.pipedream.net/s.v0/app_168hnX/logo/orig"
+                width={2.5}
+                height={2.5}
+                unoptimized
+              ></Media>
+            </Flex>{" "}
+            <Flex
+              width={5}
+              minWidth={5}
+              minHeight={5}
+              height={5}
+              radius="l"
+              style={{ backgroundColor: "#fff" }}
+              center
+              marginRight="32"
+            >
+              <Media
+                src="https://assets.pipedream.net/s.v0/app_X8PhGQ/logo/orig"
+                width={2.5}
+                height={2.5}
+                unoptimized
+              ></Media>
+            </Flex>{" "}
+            <Flex
+              width={5}
+              height={5}
+              minWidth={5}
+              minHeight={5}
+              radius="l"
+              style={{ backgroundColor: "#fff" }}
+              center
+              marginRight="32"
+            >
+              <Media
+                src="https://assets.pipedream.net/s.v0/app_OVWhPX/logo/orig"
+                width={2.5}
+                height={2.5}
+                unoptimized
+              ></Media>
+            </Flex>{" "}
+            <Flex
+            minWidth={5}
+            minHeight={5}
             width={5}
             height={5}
             radius="l"
             style={{ backgroundColor: "#fff" }}
             center
-          >
-            <Media
-              src="https://assets.pipedream.net/s.v0/app_OQYhq7/logo/orig"
-              width={2.5}
-              height={2.5}
-              unoptimized
-            ></Media>
-          </Flex>
-          <Flex
-            width={5}
-            height={5}
-            radius="l"
-            style={{ backgroundColor: "#fff" }}
-            center
-          >
-            <Media
-              src="https://assets.pipedream.net/s.v0/app_168hvn/logo/orig"
-              width={2.5}
-              height={2.5}
-              unoptimized
-            ></Media>
-          </Flex>
-          {/* <Flex
-            width={5}
-            height={5}
-            radius="l"
-            style={{ backgroundColor: "#fff" }}
-            center
-          >
-            <Media
-              src="https://assets.pipedream.net/s.v0/app_1dBhRX/logo/orig"
-              width={2.5}
-              height={2.5}
-              unoptimized
-            ></Media>
-          </Flex>
-          <Flex
-            width={5}
-            height={5}
-            radius="l"
-            style={{ backgroundColor: "#fff" }}
-            center
-          >
-            <Media
-              src="https://assets.pipedream.net/s.v0/app_mvNh0K/logo/orig"
-              width={2.5}
-              height={2.5}
-              unoptimized
-            ></Media>
-          </Flex> */}
-          <Flex
-            width={5}
-            height={5}
-            radius="l"
-            style={{ backgroundColor: "#fff" }}
-            center
-          >
-            <Media
-              src="https://assets.pipedream.net/s.v0/app_mWnhY4/logo/orig"
-              width={2.5}
-              height={2.5}
-              unoptimized
-            ></Media>
-          </Flex>{" "}
-          <Flex
-            width={5}
-            height={5}
-            radius="l"
-            style={{ backgroundColor: "#fff" }}
-            center
-          >
-            <Media
-              src="https://assets.pipedream.net/s.v0/app_OD5hL6/logo/orig"
-              width={2.5}
-              height={2.5}
-              unoptimized
-            ></Media>
-          </Flex>{" "}
-          <Flex
-            width={5}
-            height={5}
-            radius="l"
-            style={{ backgroundColor: "#fff" }}
-            center
-          >
-            <Media
-              src="https://assets.pipedream.net/s.v0/app_X7Lhxr/logo/orig"
-              width={2.5}
-              height={2.5}
-              unoptimized
-            ></Media>
-          </Flex>{" "}
-          <Flex
-            width={5}
-            height={5}
-            radius="l"
-            style={{ backgroundColor: "#fff" }}
-            center
-          >
-            <Media
-              src="https://assets.pipedream.net/s.v0/app_13Gh2V/logo/orig"
-              width={2.5}
-              height={2.5}
-              unoptimized
-            ></Media>
-          </Flex>{" "}
-          <Flex
-            width={5}
-            height={5}
-            radius="l"
-            style={{ backgroundColor: "#fff" }}
-            center
-          >
-            <Media
-              src="https://assets.pipedream.net/s.v0/app_mvNh0K/logo/orig"
-              width={2.5}
-              height={2.5}
-              unoptimized
-            ></Media>
-          </Flex>{" "}
-          <Flex
-            width={5}
-            height={5}
-            radius="l"
-            style={{ backgroundColor: "#fff" }}
-            center
-          >
-            <Media
-              src="https://assets.pipedream.net/s.v0/app_168hnX/logo/orig"
-              width={2.5}
-              height={2.5}
-              unoptimized
-            ></Media>
-          </Flex>{" "}
-          <Flex
-            width={5}
-            height={5}
-            radius="l"
-            style={{ backgroundColor: "#fff" }}
-            center
-          >
-            <Media
-              src="https://assets.pipedream.net/s.v0/app_X8PhGQ/logo/orig"
-              width={2.5}
-              height={2.5}
-              unoptimized
-            ></Media>
-          </Flex>{" "}
-          <Flex
-            width={5}
-            height={5}
-            radius="l"
-            style={{ backgroundColor: "#fff" }}
-            center
-          >
-            <Media
-              src="https://assets.pipedream.net/s.v0/app_OVWhPX/logo/orig"
-              width={2.5}
-              height={2.5}
-              unoptimized
-            ></Media>
-          </Flex>{" "}
-          <Flex
-            width={5}
-            height={5}
-            radius="l"
-            style={{ backgroundColor: "#fff" }}
-            center
+            marginRight="32"
           >
             <Media
               src="https://assets.pipedream.net/s.v0/app_OkrhR1/logo/orig"
@@ -260,9 +277,12 @@ export default function Integrations() {
           <Flex
             width={5}
             height={5}
+            minWidth={5}
+            minHeight={5}
             radius="l"
             style={{ backgroundColor: "#fff" }}
             center
+            marginRight="32"
           >
             <Media
               src="https://assets.pipedream.net/s.v0/app_XBxhAl/logo/orig"
@@ -270,9 +290,10 @@ export default function Integrations() {
               height={2.5}
               unoptimized
             ></Media>
-          </Flex>
+          </Flex> 
+          </Row>
         </AutoScroll>
-        <Row center gap="16" marginTop="32">
+        <Row center gap="16" marginTop="32" wrap={true} paddingX="40" fillWidth>
           <Button size="l">
             <Text variant="label-default-xl">View all 10 integration</Text>
           </Button>
