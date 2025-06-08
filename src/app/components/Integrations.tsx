@@ -138,7 +138,7 @@ export default function Integrations() {
                 unoptimized
               ></Media>
             </Flex>{" "}
-            {/* <Flex
+             <Flex
               width={5}
               minWidth={5}
               minHeight={5}
@@ -154,7 +154,7 @@ export default function Integrations() {
                 height={2.5}
                 unoptimized
               ></Media>
-            </Flex>{" "} */}
+            </Flex>{" "} 
             <Flex
               width={5}
               height={5}
@@ -257,7 +257,7 @@ export default function Integrations() {
                 unoptimized
               ></Media>
             </Flex>{" "}
-            {/* <Flex
+            <Flex
             minWidth={5}
             minHeight={5}
             width={5}
@@ -290,7 +290,7 @@ export default function Integrations() {
               height={2.5}
               unoptimized
             ></Media>
-          </Flex> */}
+          </Flex> 
           </Row>
         </AutoScroll>
         <Row center gap="16" marginTop="32" wrap={true} paddingX="40" fillWidth>
