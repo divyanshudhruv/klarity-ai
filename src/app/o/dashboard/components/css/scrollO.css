@@ -3,4 +3,30 @@
         align-items: center !important;
         justify-content: center !important;
     }
+
+
+}
+
+@media (max-width: 1070px) {
+    .search-input {
+        width: 10vw;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        display: none;
+    }
+
+    .scroller-search {
+        flex-wrap: wrap !important;
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 1070px) {
+    .search-subgroup {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
 }

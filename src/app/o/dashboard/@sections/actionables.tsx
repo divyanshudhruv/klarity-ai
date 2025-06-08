@@ -15,7 +15,7 @@ import { Lexend, DM_Sans } from "next/font/google";
 import React from "react";
 const lexend = Lexend({ subsets: ["latin"], weight: ["300"] });
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "700"] });
-
+import "./css/actionable.css"
 export default function Actionables() {
   const cardData = [
     {
@@ -100,6 +100,7 @@ const Card: React.FC<CardProps> = ({
       horizontal="start"
       zIndex={10}
       overflow="hidden"
+      className="workflow-card"
     >
       <Column vertical="center" horizontal="start" gap="12" marginBottom="8">
         <Flex

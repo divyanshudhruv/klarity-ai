@@ -1,0 +1,15 @@
+@media (max-width: 500px) {
+    .logo-container {
+        display: none !important;
+    }
+
+    .logo-k {
+        display: flex !important;
+    }
+
+  
+}
+
+.logo-k {
+    display: none;
+}
