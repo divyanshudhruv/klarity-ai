@@ -37,7 +37,7 @@ const Option = forwardRef<HTMLDivElement, OptionProps>(
       children,
       ...props
     },
-    ref,
+    ref
   ) => {
     if (href && onClick) {
       console.warn("Option should not have both `href` and `onClick` props.");
@@ -103,7 +103,7 @@ const Option = forwardRef<HTMLDivElement, OptionProps>(
         </Flex>
       </ElementType>
     );
-  },
+  }
 );
 
 Option.displayName = "Option";
