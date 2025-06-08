@@ -16,6 +16,7 @@ import {
 } from "@/once-ui/components";
 import { Lexend } from "next/font/google";
 import localFont from "next/font/local";
+import "./css/scrollO.css"
 const tiempos = localFont({
   src: "../../../../fonts/tiempos/TestTiemposText-Regular-BF66457a50cd521.otf",
   weight: "100",
@@ -28,7 +29,7 @@ import Alerts from "./../@sections/alerts";
 import Insights from "../@sections/insights";
 import Connections from "../@sections/connections";
 import ActivityLog from "../@sections/activity-log";
-
+import supabase from "@/app/lib/supabase";
 const lexend = Lexend({ subsets: ["latin"], weight: ["300"] });
 export default function ScrollerO() {
   const [selectedKey, setSelectedKey] = useState<string>("");
@@ -44,37 +45,49 @@ export default function ScrollerO() {
       name: "My Actionables",
       description: "Manage tasks and notes effectively.",
       href: "#actionables",
-      function: () => (window.location.hash = "actionables"),
+      function: () => {
+        window.location.hash = "#actionables";
+      },
     },
     {
       name: "Inbox Stream",
       description: "View all communications in one place.",
       href: "#inbox",
-      function: () => (window.location.hash = "inbox"),
+      function: () => {
+        window.location.hash = "#inbox";
+      },
     },
     {
       name: "Urgent Alerts",
       description: "High-priority notifications and updates.",
       href: "#alerts",
-      function: () => (window.location.hash = "alerts"),
+      function: () => {
+        window.location.hash = "#alerts";
+      },
     },
     {
       name: "Insight Library",
       description: "AI-generated summaries and insights.",
       href: "#insights",
-      function: () => (window.location.hash = "insights"),
+      function: () => {
+        window.location.hash = "#insights";
+      },
     },
     {
       name: "Connections",
       description: "Manage and integrate communication platforms.",
       href: "#connections",
-      function: () => (window.location.hash = "connections"),
+      function: () => {
+        window.location.hash = "#connections";
+      },
     },
     {
       name: "Activity Log",
       description: "Track items and actions with detailed records.",
       href: "#activity-log",
-      function: () => (window.location.hash = "activity-log"),
+      function: () => {
+        window.location.hash = "#activity-log";
+      },
     },
   ];
   const [searchValue, setSearchValue] = useState<string>("");
@@ -86,6 +99,35 @@ export default function ScrollerO() {
   const handleClear = () => {
     setSearchValue("");
   };
+
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
+
+  useEffect(() => {
+    const fetchAdminStatus = async () => {
+      try {
+        const { data: userData, error: userError } =
+          await supabase.auth.getUser();
+        const user = userData?.user;
+        if (user) {
+          const { data, error } = await supabase
+            .from("user_info")
+            .select("is_admin")
+            .eq("id", user.id)
+            .single();
+
+          if (error) {
+            console.error("Error fetching admin status:", error);
+          } else {
+            setIsAdmin(data?.is_admin || false);
+          }
+        }
+      } catch (err) {
+        console.error("Unexpected error:", err);
+      }
+    };
+
+    fetchAdminStatus();
+  }, []);
 
   return (
     <>
@@ -135,10 +177,12 @@ export default function ScrollerO() {
           horizontal="start"
           vertical="center"
           fillWidth
-          maxWidth={100}
-          style={{ maxWidth: "1250px" }}
+          maxWidth={101}
+          style={{ maxWidth: "1280px" }}
           paddingX="l"
           gap="16"
+          wrap={true}
+          className="scroller-search"
         >
           <Flex center style={{ minWidth: "60%", maxWidth: "60%" }}>
             {" "}
@@ -220,13 +264,44 @@ export default function ScrollerO() {
           </Flex>
         </Row>
       </Column>
-      <Row fillWidth fitHeight center wrap={true} gap="32" maxWidth={100}>
-        {window.location.hash === "#actionables" ? <Actionables /> : null}
-        {window.location.hash === "#inbox" ? <Inbox /> : null}
-        {window.location.hash === "#alerts" ? <Alerts /> : null}
-        {window.location.hash === "#insights" ? <Insights /> : null}
-        {window.location.hash === "#connections" ? <Connections /> : null}
-        {window.location.hash === "#activity-log" ? <ActivityLog /> : null}
+      <Row
+        fillWidth
+        fitHeight
+        horizontal="center"
+        vertical="center"
+        wrap={true}
+        gap="32"
+        style={{ maxWidth: "1420px" }}
+      >
+        {selectedKey === "My Actionables" ? (
+          isAdmin ? (
+            <Actionables />
+          ) : (
+            <Text variant="body-default-m">Page accessed only by admin</Text>
+          )
+        ) : null}
+        {selectedKey === "Inbox Stream" ? <Inbox /> : null}
+        {selectedKey === "Urgent Alerts" ? <Alerts /> : null}
+        {selectedKey === "Insight Library" ? <Insights /> : null}
+        {selectedKey === "Connections" ? <Connections /> : null}
+        {selectedKey === "Activity Log" ? <ActivityLog /> : null}
+      </Row>
+      <Row
+        center
+        fillWidth
+        fitHeight
+        marginTop="20"
+        marginBottom="20"
+        maxWidth={20}
+      >
+        <Button
+          size="l"
+          fillWidth
+          variant="secondary"
+          style={{ backgroundColor: "#F9F5F4" }}
+        >
+          <Text variant="label-default-m">Load more</Text>
+        </Button>
       </Row>
     </>
   );
