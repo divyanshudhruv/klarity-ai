@@ -16,7 +16,7 @@ import {
 } from "@/once-ui/components";
 import { Lexend } from "next/font/google";
 import localFont from "next/font/local";
-import "./css/scrollO.css"
+import "./css/scrollO.css";
 const tiempos = localFont({
   src: "../../../../fonts/tiempos/TestTiemposText-Regular-BF66457a50cd521.otf",
   weight: "100",
@@ -174,17 +174,23 @@ export default function ScrollerO() {
         </Scroller>
         <Flex fillWidth height={1}></Flex>
         <Row
-          horizontal="start"
+          horizontal="center"
           vertical="center"
           fillWidth
-          maxWidth={101}
-          style={{ maxWidth: "1280px" }}
+          style={{ maxWidth: "1490px" }}
           paddingX="l"
           gap="16"
           wrap={true}
           className="scroller-search"
         >
-          <Flex center style={{ minWidth: "60%", maxWidth: "60%" }}>
+          <Flex
+            center
+            style={{
+              minWidth: "910px",
+              maxWidth: "calc(100% - 370px)",
+            }}
+            className="search-input"
+          >
             {" "}
             <Input
               id="input-1"
@@ -205,6 +211,7 @@ export default function ScrollerO() {
               }
             />
           </Flex>
+          <Flex gap="16" className="search-subgroup">
           <Flex center>
             <Select
               height="s"
@@ -261,6 +268,7 @@ export default function ScrollerO() {
                 ></i>
               </Text>
             </Button>
+          </Flex>
           </Flex>
         </Row>
       </Column>
