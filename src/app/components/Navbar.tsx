@@ -454,36 +454,50 @@ export default function Navbar() {
           fillWidth
           gap="8"
         >
-            {menuGroups.map((group) => (
+          {menuGroups.map((group) => (
             <Accordion
               key={group.id}
               title={
-              <>
-                <Text variant="label-default-m">{group.label}</Text>
-              </>
+                <>
+                  <Text variant="label-default-m">{group.label}</Text>
+                </>
               }
               size="m"
             >
               {group.sections.map((section) => (
-              <Column key={section.title} gap="8">
-                <Flex></Flex>
-                <Text variant="label-default-m">{section.title}</Text>
-                <Flex></Flex>
-                {section.links.map((link) => (
-                <ToggleButton
-                  key={link.label}
-                  fillWidth
-                  horizontal="start"
-                  size="l"
-                  onClick={() => (window.location.href = link.href)}
-                >
-                  <Text variant="label-default-s" onBackground="neutral-medium">{link.label}</Text>
-                </ToggleButton>
-                ))}
-              </Column>
+                <Column key={section.title} gap="8">
+                  <Flex></Flex>
+                  <Text variant="label-default-m">{section.title}</Text>
+                  <Flex></Flex>
+                  {section.links.map((link) => (
+                    <ToggleButton
+                      key={link.label}
+                      fillWidth
+                      horizontal="start"
+                      size="l"
+                      onClick={() => (window.location.href = link.href)}
+                    >
+                      <Text
+                        variant="label-default-s"
+                        onBackground="neutral-medium"
+                      >
+                        {link.label}
+                      </Text>
+                    </ToggleButton>
+                  ))}
+                </Column>
               ))}
             </Accordion>
-            ))}
+          ))}
+          <Button
+          fillWidth
+            variant="primary"
+            size="l"
+            className={poppins.className}
+            onClick={() => (window.location.href = "/auth/signin")}
+          >
+            <Text variant="label-default-xl">SignIn</Text>
+          </Button>
         </Column>
       )}
     </>
