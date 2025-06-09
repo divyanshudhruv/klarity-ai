@@ -78,7 +78,8 @@ export default function Actionables() {
       avatar:
         "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png",
       title: "Someone assigned you an issue.",
-      description: " The issue is related to a project you are working on, and it requires your attention and action to resolve it.",
+      description:
+        " The issue is related to a project you are working on, and it requires your attention and action to resolve it.",
       urgency: "Critical",
       summary:
         "Issue #12345 has been assigned to you. It requires immediate attention and resolution. Please review the details and take necessary actions to address the issue promptly, ensuring that all relevant stakeholders are informed and involved in the resolution process.",
@@ -335,7 +336,7 @@ const Card: React.FC<CardProps> = ({
     className="workflow-row"
     fitHeight
     radius="xl"
-    style={{ backgroundColor: "#F9F7F5" }}
+    style={{ backgroundColor: "#F9F7F5", maxWidth: "73vw !important" }}
     wrap={true}
     paddingY="16"
     paddingX="16"
@@ -391,6 +392,7 @@ const Card: React.FC<CardProps> = ({
           maxHeight: "60%",
           minHeight: "60%",
         }}
+        className="actionable-details"
       >
         <Column
           fillWidth

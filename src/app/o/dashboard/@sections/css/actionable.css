@@ -60,13 +60,29 @@
 
     }
 }
-@media((max-width:1959px)){
+
+@media((max-width:1959px)) {
     .actionables-section {
         max-width: 1503px !important;
     }
 }
+
 @media ((min-width: 1960px)) {
     .actionables-section {
         max-width: 1970px !important;
+    }
+}
+
+@media ((max-width: 460px)) {
+    .workflow-card {
+        max-width: 72vw !important;
+       max-height: 450px !important;
+       min-height: 450px !important;
+    }
+
+    .actionable-details{
+        min-height: 50% !important;
+        max-height: 50% !important;
+        top: 50% !important;
     }
 }
