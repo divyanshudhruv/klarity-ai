@@ -134,15 +134,13 @@ export default function ScrollerO() {
     <>
       <Column
         center
-        // border="neutral-medium"
-        // borderStyle="dashed"
+        
         fillWidth
         fitHeight
         radius="m"
         paddingY="xs"
         marginBottom="20"
       >
-        {" "}
         <Scroller
           fadeColor="transparent"
           overflowX="scroll"
@@ -151,8 +149,7 @@ export default function ScrollerO() {
           paddingX="l"
           // height={4}
           fitHeight
-          paddingBottom="0"
-          marginBottom="0"
+         
         >
           <Row
             horizontal="start"
@@ -184,178 +181,10 @@ export default function ScrollerO() {
             </Flex>
           </Row>
         </Scroller>
-        <Flex fillWidth height={1}></Flex>
-        <Column
-          horizontal="center"
-          vertical="center"
-          fillWidth
-          style={{ maxWidth: "1850px" }}
-          paddingX="l"
-          gap="16"
-          wrap={true}
-          className="scroller-search"
-          zIndex={10}
-        >
-          <Flex
-            center
-            style={{
-              maxWidth: "886px",
-            }}
-            className="search-input"
-          >
-            {" "}
-            <Input
-              id="input-1"
-              placeholder="Search cards"
-              value={searchValue}
-              onChange={handleChange}
-              hasPrefix={<Icon name="search" size="xs" />}
-              hasSuffix={
-                searchValue.length > 0 ? (
-                  <IconButton
-                    variant="ghost"
-                    icon="close"
-                    size="s"
-                    onClick={handleClear}
-                    aria-label="Clear search"
-                  />
-                ) : null
-              }
-            />
-          </Flex>
-          <Row
-            vertical="center"
-            horizontal="space-between"
-            gap="16"
-            className="search-subgroup"
-          >
-            <DateRangeInput
-              id="basic-date-range-example"
-              startLabel=""
-              endLabel=""
-              value={{
-                startDate: new Date(),
-                endDate: new Date(new Date().setDate(new Date().getDate() + 7)),
-              }}
-              style={{
-                maxHeight: "36px",
-                minHeight: "36px",
-              }}
-              Dstyle={{ width: "fit-content" }}
-              onChange={() => {}}
-            />
-            <Flex center>
-              <Select
-                height="s"
-                style={{ width: "180px" }}
-                id="basic-select"
-                hasSuffix={
-                  <Text onBackground="neutral-medium">
-                    <i className="ri-arrow-down-s-line"></i>
-                  </Text>
-                }
-                label="Sort by activity"
-                options={[
-                  { label: "Critical Urgency", value: "critical" },
-                  { label: "High Priority", value: "high_priority" },
-                  { label: "Actionable", value: "actionable" },
-                  { label: "Information Only", value: "info_only" },
-
-                  // Item Type
-                  { label: "Task", value: "task" },
-                  { label: "Note", value: "note" },
-
-                  // Status
-                  { label: "Pending", value: "pending" },
-                  { label: "Completed", value: "completed" },
-                  { label: "Reviewed", value: "reviewed" },
-
-                  // Source Platform (Conceptual)
-                  { label: "LinkedIn", value: "linkedin" },
-                  { label: "Gmail", value: "gmail" },
-                  { label: "WhatsApp", value: "whatsapp" },
-                  { label: "Discord", value: "discord" },
-                  { label: "Slack", value: "slack" },
-                ]}
-              />
-            </Flex>
-            <Flex
-              fitWidth
-              fitHeight
-              border="neutral-medium"
-              borderStyle="solid"
-              gap="4"
-              style={{ maxHeight: "46px", minHeight: "46px", padding: "4px" }}
-              radius="m"
-            >
-              <Option
-                key={"grid"}
-                selected={true}
-                label={
-                  <Text onBackground="neutral-medium">
-                    <i
-                      className="ri-function-line"
-                      style={{ fontSize: "17px" }}
-                    ></i>
-                  </Text>
-                }
-                value="grid"
-              />
-              <Option
-                key={"list"}
-                label={
-                  <Text onBackground="neutral-strong">
-                    <i
-                      className="ri-list-check"
-                      style={{ fontSize: "17px" }}
-                    ></i>{" "}
-                  </Text>
-                }
-                value="list"
-              />
-            </Flex>
-            <Flex center maxWidth={8} vertical="center" horizontal="center">
-              {" "}
-              <Button
-                fillWidth
-                style={{ minHeight: "46px", maxHeight: "46px" }}
-              >
-                <Text variant="label-default-m">
-                  Create new{" "}
-                  <i
-                    className="ri-arrow-right-s-line"
-                    style={{ fontSize: "16px" }}
-                  ></i>
-                </Text>
-              </Button>
-            </Flex>
-            <Flex center vertical="center" horizontal="center">
-              {" "}
-              <Button
-                fillWidth
-                style={{ minHeight: "46px", maxHeight: "46px" }}
-              >
-                <Text variant="label-default-m">
-                  AI Assistant{" "}
-                  <i
-                    className="ri-arrow-down-s-line"
-                    style={{ fontSize: "16px" }}
-                  ></i>
-                </Text>
-              </Button>
-            </Flex>
-          </Row>
-        </Column>
+        
       </Column>
       <Row
-        fillWidth
-        fitHeight
-        horizontal="center"
-        vertical="center"
-        wrap={true}
-        gap="32"
-        style={{ maxWidth: "98vw" }}
-        zIndex={1}
+        
       >
         {selectedKey === "My Actionables" ? (
           isAdmin ? (
