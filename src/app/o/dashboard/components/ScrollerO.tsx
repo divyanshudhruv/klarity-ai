@@ -134,7 +134,6 @@ export default function ScrollerO() {
     <>
       <Column
         center
-        
         fillWidth
         fitHeight
         radius="m"
@@ -149,7 +148,6 @@ export default function ScrollerO() {
           paddingX="l"
           // height={4}
           fitHeight
-         
         >
           <Row
             horizontal="start"
@@ -181,10 +179,11 @@ export default function ScrollerO() {
             </Flex>
           </Row>
         </Scroller>
-        
       </Column>
       <Row
-        
+        fillWidth
+        center
+        // background="accent-strong"
       >
         {selectedKey === "My Actionables" ? (
           isAdmin ? (
@@ -199,7 +198,6 @@ export default function ScrollerO() {
         {selectedKey === "Connections" ? <Connections /> : null}
         {selectedKey === "Activity Log" ? <ActivityLog /> : null}
       </Row>
-     
     </>
   );
 }

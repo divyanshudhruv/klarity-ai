@@ -74,7 +74,7 @@ export default function Actionables() {
       showUrgency: true, // Show urgency section
       showSummary: true, // Show summary section
     },
-     {
+    {
       avatar: "https://assets.pipedream.net/s.v0/app_OD5hL6/logo/orig",
       title: "Transaction completed successfully.",
       description:
@@ -87,7 +87,7 @@ export default function Actionables() {
       showUrgency: true, // Show urgency section
       showSummary: true, // Show summary section
     },
-     {
+    {
       avatar: "https://assets.pipedream.net/s.v0/app_OD5hL6/logo/orig",
       title: "Transaction completed successfully.",
       description:
@@ -103,7 +103,14 @@ export default function Actionables() {
   ];
 
   return (
-    <Column fillWidth paddingX="xl" fitHeight gap="16" marginBottom="20" className="actionables-section">
+    <Column
+      fillWidth
+      paddingX="xl"
+      fitHeight
+      gap="16"
+      marginBottom="20"
+      className="actionables-section"
+    >
       <SearchControl></SearchControl>
       <Row fitWidth fitHeight horizontal="start" wrap={true} gap="20">
         {cardData.map((card, index) => (
