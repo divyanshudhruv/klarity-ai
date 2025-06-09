@@ -113,7 +113,14 @@ export default function Actionables() {
       className="actionables-section"
     >
       <SearchControl></SearchControl>
-      <Row fitWidth fitHeight horizontal="start" wrap={true} gap="20">
+      <Row
+        fitWidth
+        fitHeight
+        horizontal="start"
+        wrap={true}
+        gap="20"
+        style={{ maxWidth: "100% !important", minWidth: "60vw !important" }}
+      >
         {cardData.map((card, index) => (
           <Card key={index} {...card} />
         ))}
@@ -336,7 +343,6 @@ const Card: React.FC<CardProps> = ({
     className="workflow-row"
     fitHeight
     radius="xl"
-    style={{ backgroundColor: "#F9F7F5", maxWidth: "73vw !important" }}
     wrap={true}
     paddingY="16"
     paddingX="16"
