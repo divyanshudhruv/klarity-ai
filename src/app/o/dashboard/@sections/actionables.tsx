@@ -10,12 +10,27 @@ import {
   Icon,
   Button,
   Fade,
+  Input,
+  IconButton,
+  DateRangeInput,
+  Select,
+  Option,
 } from "@/once-ui/components";
 import { Lexend, DM_Sans } from "next/font/google";
 import React from "react";
 const lexend = Lexend({ subsets: ["latin"], weight: ["300"] });
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "700"] });
-import "./css/actionable.css"
+import "./css/actionable.css";
+const thirdFont = Lexend({
+  variable: "--font-third",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+import { useState } from "react";
+const font = {
+  tertiary: thirdFont,
+};
 export default function Actionables() {
   const cardData = [
     {
@@ -27,6 +42,9 @@ export default function Actionables() {
       summary:
         "This summary provides detailed information about the context and background of the actionables discussed in this thread. It elaborates on the key points, highlights the main objectives, and provides a comprehensive overview of the situation to ensure clarity and understanding for all stakeholders involved.",
       automation: "Trigger notification",
+      showAutomation: true, // Show automation section
+      showUrgency: true, // Show urgency section
+      showSummary: false, // Show summary section
     },
     {
       avatar: "https://assets.pipedream.net/s.v0/app_mWnhY4/logo/orig",
@@ -36,6 +54,9 @@ export default function Actionables() {
       summary:
         "This summary provides detailed information about the context and background of the actionables discussed in this thread. It elaborates on the key points, highlights the main objectives, and provides a comprehensive overview of the situation to ensure clarity and understanding for all stakeholders involved.",
       automation: "Send follow-up email",
+      showAutomation: true, // Show automation section
+      showUrgency: true, // Show urgency section
+      showSummary: false, // Show summary section
     },
     {
       avatar: "https://assets.pipedream.net/s.v0/app_OD5hL6/logo/orig",
@@ -45,19 +66,191 @@ export default function Actionables() {
       summary:
         "This summary provides detailed information about the context and background of the actionables discussed in this thread. It elaborates on the key points, highlights the main objectives, and provides a comprehensive overview of the situation to ensure clarity and understanding for all stakeholders involved.",
       automation: "Generate receipt",
+      showAutomation: true, // Show automation section
+      showUrgency: true, // Show urgency section
+      showSummary: false, // Show summary section
     },
   ];
-  return (
-    <Row fitWidth fitHeight center wrap={true} gap="20">
-      {cardData.map((card, index) => (
-        <Card key={index} {...card} />
-      ))}
 
-      
-    </Row>
+  return (
+    <Column fillWidth paddingX="xl" fitHeight horizontal="center" gap="16">
+      <SearchControl></SearchControl>
+      <Row fitWidth fitHeight horizontal="start" wrap={true} gap="20">
+        {cardData.map((card, index) => (
+          <Card key={index} {...card} />
+        ))}
+      </Row>
+    </Column>
   );
 }
 
+const SearchControl: React.FC = () => {
+  const [searchValue, setSearchValue] = useState<string>("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
+  };
+
+  const handleClear = () => {
+    setSearchValue("");
+  };
+  return (
+    <Column gap="16" fillWidth fitHeight>
+      <Row
+        center
+        fillWidth
+        style={{ minWidth: "100%" }}
+        className="container-s"
+      >
+        <Input
+          id="input-1"
+          placeholder="Search cards"
+          value={searchValue}
+          onChange={handleChange}
+          hasPrefix={<Icon name="search" size="xs" />}
+          hasSuffix={
+            searchValue.length > 0 ? (
+              <IconButton
+                variant="ghost"
+                icon="close"
+                size="s"
+                onClick={handleClear}
+                aria-label="Clear search"
+              />
+            ) : null
+          }
+        />
+      </Row>
+
+      <Row
+        vertical="center"
+        horizontal="start"
+        gap="20"
+        className="search-subgroup"
+        fillWidth
+      >
+        <DateRangeInput
+          id="basic-date-range-example"
+          startLabel=""
+          endLabel=""
+          value={{
+            startDate: new Date(),
+            endDate: new Date(new Date().setDate(new Date().getDate() + 7)),
+          }}
+          style={{
+            maxHeight: "36px",
+            minHeight: "36px",
+          }}
+          Dstyle={{ width: "fit-content" }}
+          onChange={() => {}}
+          className="date-range-input"
+        />
+        <Flex center className="select-container">
+          <Select
+            height="s"
+            style={{ width: "180px" }}
+            id="basic-select"
+            hasSuffix={
+              <Text onBackground="neutral-medium">
+                <i className="ri-arrow-down-s-line"></i>
+              </Text>
+            }
+            label="Sort by activity"
+            options={[
+              { label: "Critical Urgency", value: "critical" },
+              { label: "High Priority", value: "high_priority" },
+              { label: "Actionable", value: "actionable" },
+              { label: "Information Only", value: "info_only" },
+
+              // Item Type
+              { label: "Task", value: "task" },
+              { label: "Note", value: "note" },
+
+              // Status
+              { label: "Pending", value: "pending" },
+              { label: "Completed", value: "completed" },
+              { label: "Reviewed", value: "reviewed" },
+
+              // Source Platform (Conceptual)
+              { label: "LinkedIn", value: "linkedin" },
+              { label: "Gmail", value: "gmail" },
+              { label: "WhatsApp", value: "whatsapp" },
+              { label: "Discord", value: "discord" },
+              { label: "Slack", value: "slack" },
+            ]}
+          />
+        </Flex>
+        <Flex
+          fitWidth
+          fitHeight
+          border="neutral-medium"
+          borderStyle="solid"
+          gap="4"
+          style={{ maxHeight: "46px", minHeight: "46px", padding: "4px" }}
+          radius="m"
+          className="layout-container"
+        >
+          <Option
+            key={"grid"}
+            selected={true}
+            label={
+              <Text onBackground="neutral-medium">
+                <i
+                  className="ri-function-line"
+                  style={{ fontSize: "17px" }}
+                ></i>
+              </Text>
+            }
+            value="grid"
+          />
+          <Option
+            key={"list"}
+            label={
+              <Text onBackground="neutral-strong">
+                <i className="ri-list-check" style={{ fontSize: "17px" }}></i>{" "}
+              </Text>
+            }
+            value="list"
+          />
+        </Flex>
+        <Flex
+          center
+          maxWidth={8}
+          vertical="center"
+          horizontal="center"
+          className="create-new-button"
+        >
+          {" "}
+          <Button fillWidth style={{ minHeight: "46px", maxHeight: "46px" }}>
+            <Text variant="label-default-m">
+              Create new{" "}
+              <i
+                className="ri-arrow-right-s-line"
+                style={{ fontSize: "16px" }}
+              ></i>
+            </Text>
+          </Button>
+        </Flex>
+        <Flex
+          center
+          vertical="center"
+          horizontal="center"
+          className="ai-assistant-button"
+        >
+          <Button fillWidth style={{ minHeight: "46px", maxHeight: "46px" }}>
+            <Text variant="label-default-m">
+              AI Assistant{" "}
+              <i
+                className="ri-arrow-down-s-line"
+                style={{ fontSize: "16px" }}
+              ></i>
+            </Text>
+          </Button>
+        </Flex>
+      </Row>
+    </Column>
+  );
+};
 type CardProps = {
   avatar: string;
   title: string;
@@ -65,6 +258,9 @@ type CardProps = {
   urgency: string;
   summary: string;
   automation: string;
+  showAutomation?: boolean; // Optional prop to control automation visibility
+  showSummary?: boolean; // Optional prop to control summary visibility
+  showUrgency?: boolean; // Optional prop to control urgency visibility
 };
 
 const Card: React.FC<CardProps> = ({
@@ -74,6 +270,9 @@ const Card: React.FC<CardProps> = ({
   urgency,
   summary,
   automation,
+  showAutomation = false, // Default to false if not provided
+  showSummary = false, // Default to true if not provided
+  showUrgency = false, // Default to true if not provided
 }) => (
   <Column
     border="neutral-medium"
@@ -114,7 +313,7 @@ const Card: React.FC<CardProps> = ({
         </Flex>
         <Text
           variant="label-strong-l"
-          className={dmSans.className}
+          className={font.tertiary.className}
           marginBottom="8"
           onBackground="neutral-strong"
         >
@@ -137,23 +336,23 @@ const Card: React.FC<CardProps> = ({
           overflowY: "scroll",
         }}
       >
-        <Scroller direction="column" fitHeight fillWidth>
-          <Column
-            fillWidth
-            fitHeight
-            style={{
-              backgroundColor: "#F0EEEC",
-              maxHeight: "fit-content",
-              overflowY: "scroll",
-            }}
-            border="neutral-strong"
-            borderStyle="solid"
-            borderWidth={1}
-            radius="s"
-            paddingX="12"
-            paddingY="12"
-            paddingBottom="0"
-          >
+        <Column
+          fillWidth
+          fitHeight
+          style={{
+            backgroundColor: "#F0EEEC",
+            maxHeight: "fit-content",
+            overflowY: "scroll",
+          }}
+          border="neutral-strong"
+          borderStyle="solid"
+          borderWidth={1}
+          radius="s"
+          paddingX="12"
+          paddingY="12"
+          paddingBottom="0"
+        >
+          {showUrgency && (
             <Column gap="12" marginBottom="m">
               <Row>
                 <Text variant="label-default-s" onBackground="neutral-medium">
@@ -199,6 +398,8 @@ const Card: React.FC<CardProps> = ({
                 </Column>
               </Row>
             </Column>
+          )}
+          {showSummary && (
             <Column gap="12" marginBottom="m">
               <Row>
                 <Text variant="label-default-s" onBackground="neutral-medium">
@@ -224,6 +425,8 @@ const Card: React.FC<CardProps> = ({
                 </Text>
               </Column>
             </Column>
+          )}
+          {showAutomation && (
             <Column gap="12" marginBottom="m">
               <Row>
                 <Text variant="label-default-s" onBackground="neutral-medium">
@@ -275,8 +478,8 @@ const Card: React.FC<CardProps> = ({
                 </Column>
               </Row>
             </Column>
-          </Column>
-        </Scroller>
+          )}
+        </Column>
       </Column>
     </Column>
   </Column>

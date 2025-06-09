@@ -1,5 +1,62 @@
-@media (max-width: 450px) {
+/* @media (max-width: 450px) {
 .workflow-card{
     max-width: 80vw !important;
 }
+} */
+
+
+@media ((max-width: 1033px)) {
+    .search-subgroup {
+        gap: 25px;
+
+    }
+}
+
+@media ((max-width: 700px)) {
+
+
+    .date-range-input {
+        display: inherit !important;
+    }
+
+    .select-container {
+        display: none !important;
+    }
+
+    .layout-container {
+        display: inherit !important;
+    }
+
+    .ai-assistant-button {
+        display: inherit !important;
+    }
+
+    .search-subgroup {
+        justify-content: space-between !important;
+        max-width: 100%;
+    }
+
+    .container-s {
+        width: 100% !important;
+    }
+}
+
+@media ((max-width: 515px)) {
+    .ai-assistant-button {
+        display: none !important;
+    }
+
+    .create-new-button {
+        display: flex !important;
+    }
+
+    .layout-container {
+        display: flex !important;
+    }
+
+    .search-subgroup {
+        justify-content: space-between !important;
+        z-index: 99999;
+       
+    }
 }
