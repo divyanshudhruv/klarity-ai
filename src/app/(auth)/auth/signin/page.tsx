@@ -86,7 +86,7 @@ export default function Hero() {
         radius="l"
         padding="l"
         gap="12"
-        style={{ scale: "0.95" }}
+        style={{ scale: "0.95", maxWidth: "86vw" }}
       >
         <Text
           variant="heading-strong-xl"
@@ -173,7 +173,7 @@ export default function Hero() {
               variant="label-default-xl"
               className={lexend.className}
               onBackground="neutral-weak"
-              style={{backgroundColor:"#FAF8F6"}}
+              style={{ backgroundColor: "#FAF8F6" }}
             >
               OR CONTINUE WITH
             </Text>

@@ -36,12 +36,12 @@ export default function Actionables() {
     {
       avatar:
         "https://th.bing.com/th/id/ODLS.c1b94e26-52d8-4d85-8faf-a367583929ce?w=32&h=32&qlt=90&pcl=fffffc&o=6&pid=1.2",
-      title: "Hassaan commented on your post.",
+      title: "Someone commented on your post.",
       description:
-        "This is a brief comment related to your post on platform that requires your attention and action to address the comment or engage with the user who made it and",
+        "A user has commented on your post, providing feedback or insights that may require your attention. This interaction could be crucial for engagement.",
       urgency: "Low",
       summary:
-        "This summary provides detailed information about the context and background of the actionables discussed in this thread. It elaborates on the key points, highlights the main objectives, and provides a comprehensive overview of the situation to ensure clarity and understanding for all stakeholders involved.",
+        "A coding meme has been posted on the platform, and a user has commented on it. The comment provides feedback or insights that may require your attention. This interaction could be crucial for engagement.",
       automation: "Trigger notification",
       showAutomation: true, // Show automation section
       showUrgency: true, // Show urgency section
@@ -50,12 +50,12 @@ export default function Actionables() {
     },
     {
       avatar: "https://assets.pipedream.net/s.v0/app_mWnhY4/logo/orig",
-      title: "Atharv replied to your message",
+      title: "Someone replied to your message",
       description:
-        "Atharv has responded to your earlier message, providing insights, feedback that may require your attention. This interaction could be crucial.",
+        "Someone has responded to your earlier message on gaming, providing insights, feedback that may require your attention. This interaction could be crucial.",
       urgency: "Medium",
       summary:
-        "This summary elaborates on the context and significance of Atharv's reply, highlighting key points and actionable insights. It ensures clarity and understanding for all stakeholders involved, fostering productive communication and collaboration.",
+        "According to the latest updates, he asked for more information about minecraft and its features. Gaming enthusiasts are always looking for the latest updates and features in their favorite games, and this interaction could provide valuable insights.",
       automation: "Send follow-up email",
       showAutomation: true, // Show automation section
       showUrgency: true, // Show urgency section
@@ -75,26 +75,26 @@ export default function Actionables() {
       showSummary: true, // Show summary section
     },
     {
-      avatar: "https://assets.pipedream.net/s.v0/app_OD5hL6/logo/orig",
-      title: "Transaction completed successfully.",
-      description:
-        "Your transaction has been processed by the system, and all necessary actions have been taken to ensure its success. This includes verification, confirmation.",
-      urgency: "High",
+      avatar:
+        "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png",
+      title: "Someone assigned you an issue.",
+      description: " The issue is related to a project you are working on, and it requires your attention and action to resolve it.",
+      urgency: "Critical",
       summary:
-        "This summary provides detailed information about the context and background of the actionables discussed in this thread. It elaborates on the key points, highlights the main objectives, and provides a comprehensive overview of the situation to ensure clarity and understanding for all stakeholders involved.",
+        "Issue #12345 has been assigned to you. It requires immediate attention and resolution. Please review the details and take necessary actions to address the issue promptly, ensuring that all relevant stakeholders are informed and involved in the resolution process.",
       automation: "Generate receipt",
       showAutomation: true, // Show automation section
       showUrgency: true, // Show urgency section
       showSummary: true, // Show summary section
     },
     {
-      avatar: "https://assets.pipedream.net/s.v0/app_OD5hL6/logo/orig",
-      title: "Transaction completed successfully.",
+      avatar: "https://assets.pipedream.net/s.v0/app_13Gh2V/logo/orig",
+      title: "Someone booked a meeting with you.",
       description:
-        "Your transaction has been processed by the system, and all necessary actions have been taken to ensure its success. This includes verification, confirmation.",
+        "A meeting has been scheduled with you by a user on the platform. The meeting details include the date, time, and agenda, which require your attention and action to prepare for the meeting.",
       urgency: "High",
       summary:
-        "This summary provides detailed information about the context and background of the actionables discussed in this thread. It elaborates on the key points, highlights the main objectives, and provides a comprehensive overview of the situation to ensure clarity and understanding for all stakeholders involved.",
+        "User has booked a meeting with you on [Date] at [Time]. The agenda includes [Agenda Details]. Please prepare accordingly and ensure that all necessary materials are ready for discussion during the meeting.",
       automation: "Generate receipt",
       showAutomation: true, // Show automation section
       showUrgency: true, // Show urgency section
