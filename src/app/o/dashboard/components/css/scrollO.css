@@ -8,19 +8,25 @@
 }
 
 @media (max-width: 1070px) {
-    .search-input {
-        width: 10vw;
-        max-width: 100% !important;
-        min-width: 100% !important;
-        display: none;
-    }
 
     .scroller-search {
         flex-wrap: wrap !important;
         flex-direction: column;
     }
-}
 
+    .search-input {
+        max-width: 861px !important;
+        width: 100% !important;
+    }
+
+
+    .search-subgroup {
+        display: flex;
+    }
+}
+.search-input{
+    width: 100%;
+}
 
 @media (max-width: 1070px) {
     .search-subgroup {

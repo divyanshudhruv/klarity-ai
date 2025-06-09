@@ -90,6 +90,7 @@ export default function NavbarO() {
       borderBottom="neutral-medium"
       borderStyle="dashed"
       className="navbar-container"
+      marginBottom="0"
     >
       <Flex onClick={() => (window.location.href = "/")} cursor="pointer">
         <Text
