@@ -57,6 +57,16 @@
     .search-subgroup {
         justify-content: space-between !important;
         z-index: 99999;
-       
+
+    }
+}
+@media((max-width:1959px)){
+    .actionables-section {
+        max-width: 1503px !important;
+    }
+}
+@media ((min-width: 1960px)) {
+    .actionables-section {
+        max-width: 1970px !important;
     }
 }

@@ -37,48 +37,92 @@ export default function Actionables() {
       avatar:
         "https://th.bing.com/th/id/ODLS.c1b94e26-52d8-4d85-8faf-a367583929ce?w=32&h=32&qlt=90&pcl=fffffc&o=6&pid=1.2",
       title: "Hassaan commented on your post.",
-      description: "This is a brief comment related to your post.",
+      description:
+        "This is a brief comment related to your post on platform that requires your attention and action to address the comment or engage with the user who made it and",
       urgency: "Low",
       summary:
         "This summary provides detailed information about the context and background of the actionables discussed in this thread. It elaborates on the key points, highlights the main objectives, and provides a comprehensive overview of the situation to ensure clarity and understanding for all stakeholders involved.",
       automation: "Trigger notification",
       showAutomation: true, // Show automation section
       showUrgency: true, // Show urgency section
-      showSummary: false, // Show summary section
+      showSummary: true, // Show summary section
+      // Show summary section
     },
     {
       avatar: "https://assets.pipedream.net/s.v0/app_mWnhY4/logo/orig",
-      title: "Atharv replied to your message.",
-      description: "A quick response to your earlier message.",
+      title: "Atharv replied to your message",
+      description:
+        "Atharv has responded to your earlier message, providing insights, feedback that may require your attention. This interaction could be crucial.",
       urgency: "Medium",
       summary:
-        "This summary provides detailed information about the context and background of the actionables discussed in this thread. It elaborates on the key points, highlights the main objectives, and provides a comprehensive overview of the situation to ensure clarity and understanding for all stakeholders involved.",
+        "This summary elaborates on the context and significance of Atharv's reply, highlighting key points and actionable insights. It ensures clarity and understanding for all stakeholders involved, fostering productive communication and collaboration.",
       automation: "Send follow-up email",
       showAutomation: true, // Show automation section
       showUrgency: true, // Show urgency section
-      showSummary: false, // Show summary section
+      showSummary: true, // Show summary section
     },
     {
       avatar: "https://assets.pipedream.net/s.v0/app_OD5hL6/logo/orig",
       title: "Transaction completed successfully.",
-      description: "Your transaction has been processed.",
+      description:
+        "Your transaction has been processed by the system, and all necessary actions have been taken to ensure its success. This includes verification, confirmation.",
       urgency: "High",
       summary:
         "This summary provides detailed information about the context and background of the actionables discussed in this thread. It elaborates on the key points, highlights the main objectives, and provides a comprehensive overview of the situation to ensure clarity and understanding for all stakeholders involved.",
       automation: "Generate receipt",
       showAutomation: true, // Show automation section
       showUrgency: true, // Show urgency section
-      showSummary: false, // Show summary section
+      showSummary: true, // Show summary section
+    },
+     {
+      avatar: "https://assets.pipedream.net/s.v0/app_OD5hL6/logo/orig",
+      title: "Transaction completed successfully.",
+      description:
+        "Your transaction has been processed by the system, and all necessary actions have been taken to ensure its success. This includes verification, confirmation.",
+      urgency: "High",
+      summary:
+        "This summary provides detailed information about the context and background of the actionables discussed in this thread. It elaborates on the key points, highlights the main objectives, and provides a comprehensive overview of the situation to ensure clarity and understanding for all stakeholders involved.",
+      automation: "Generate receipt",
+      showAutomation: true, // Show automation section
+      showUrgency: true, // Show urgency section
+      showSummary: true, // Show summary section
+    },
+     {
+      avatar: "https://assets.pipedream.net/s.v0/app_OD5hL6/logo/orig",
+      title: "Transaction completed successfully.",
+      description:
+        "Your transaction has been processed by the system, and all necessary actions have been taken to ensure its success. This includes verification, confirmation.",
+      urgency: "High",
+      summary:
+        "This summary provides detailed information about the context and background of the actionables discussed in this thread. It elaborates on the key points, highlights the main objectives, and provides a comprehensive overview of the situation to ensure clarity and understanding for all stakeholders involved.",
+      automation: "Generate receipt",
+      showAutomation: true, // Show automation section
+      showUrgency: true, // Show urgency section
+      showSummary: true, // Show summary section
     },
   ];
 
   return (
-    <Column fillWidth paddingX="xl" fitHeight horizontal="center" gap="16">
+    <Column fillWidth paddingX="xl" fitHeight gap="16" marginBottom="20" className="actionables-section">
       <SearchControl></SearchControl>
       <Row fitWidth fitHeight horizontal="start" wrap={true} gap="20">
         {cardData.map((card, index) => (
           <Card key={index} {...card} />
         ))}
+      </Row>
+      <Row horizontal="center" fillWidth fitHeight>
+        <Button
+          fillWidth
+          size="l"
+          variant="secondary"
+          style={{
+            backgroundColor: "#F9F7F5",
+            borderColor: "#E0E0E0",
+            // borderWidth: "1px",
+          }}
+        >
+          <Text variant="label-default-m">Load more</Text>
+        </Button>
       </Row>
     </Column>
   );
@@ -293,7 +337,8 @@ const Card: React.FC<CardProps> = ({
       fillWidth
       fillHeight
       paddingY="8"
-      maxHeight={30}
+      maxHeight={28.2}
+      minHeight={28.2}
       paddingX="8"
       width={25}
       horizontal="start"
@@ -334,6 +379,10 @@ const Card: React.FC<CardProps> = ({
         fitHeight
         style={{
           overflowY: "scroll",
+          position: "absolute",
+          top: "40%",
+          maxHeight: "60%",
+          minHeight: "60%",
         }}
       >
         <Column
@@ -427,7 +476,7 @@ const Card: React.FC<CardProps> = ({
             </Column>
           )}
           {showAutomation && (
-            <Column gap="12" marginBottom="m">
+            <Column gap="12" marginBottom="s">
               <Row>
                 <Text variant="label-default-s" onBackground="neutral-medium">
                   <i className="ri-robot-3-line"></i>&nbsp;Automation

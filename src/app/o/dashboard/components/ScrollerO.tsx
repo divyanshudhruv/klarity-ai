@@ -199,23 +199,7 @@ export default function ScrollerO() {
         {selectedKey === "Connections" ? <Connections /> : null}
         {selectedKey === "Activity Log" ? <ActivityLog /> : null}
       </Row>
-      <Row
-        center
-        fillWidth
-        fitHeight
-        marginTop="20"
-        marginBottom="20"
-        maxWidth={20}
-      >
-        <Button
-          size="l"
-          fillWidth
-          variant="secondary"
-          style={{ backgroundColor: "#F9F5F4" }}
-        >
-          <Text variant="label-default-m">Load more</Text>
-        </Button>
-      </Row>
+     
     </>
   );
 }
