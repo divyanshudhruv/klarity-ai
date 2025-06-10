@@ -100,6 +100,7 @@ const Carousel: React.FC<CarouselProps> = ({
               cursor: "pointer",
             }),
           }}
+          unoptimized={true}
         />
       </RevealFx>
       {images.length > 1 && (
@@ -147,6 +148,8 @@ const Carousel: React.FC<CarouselProps> = ({
                     cursor="interactive"
                     radius="m"
                     transition="macro-medium"
+                              unoptimized={true}
+
                   />
                 </Flex>
               ))}
