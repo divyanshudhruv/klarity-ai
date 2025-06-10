@@ -85,9 +85,15 @@
 
 @media ((max-width: 460px)) {
     .workflow-card {
-        max-width: fit-content !important;
         max-height: 450px !important;
         min-height: 450px !important;
+        max-width: fit-content !important;
+    }
+
+    .workflow-column {
+        min-width: 90vw !important;
+        max-width: 90vw !important;
+        width: 90vw !important;
     }
 
     .actionable-details {
