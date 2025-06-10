@@ -38,3 +38,6 @@ next-env.d.ts
 /.clerk/
 
 /src/middleware.ts
+
+# google cloud functions
+google-cloud-functions.tsx

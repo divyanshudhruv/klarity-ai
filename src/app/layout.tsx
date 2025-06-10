@@ -1,6 +1,6 @@
 import "@/once-ui/styles/index.scss";
 import "@/once-ui/tokens/index.scss";
-import "./global.css"
+import "./global.css";
 import classNames from "classnames";
 
 import {
@@ -76,7 +76,7 @@ export default function RootLayout({
         <script
           // biome-ignore lint/security/noDangerouslySetInnerHtml: <It's not dynamic nor a security issue.>
           dangerouslySetInnerHTML={{
-        __html: `
+            __html: `
           (function() {
             try {
           const theme = 'light';
@@ -94,6 +94,18 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
           rel="stylesheet"
         />
+        {/* Load Google Identity Services (GSI) for authentication */}
+        <script
+          async
+          defer
+          src="https://accounts.google.com/gsi/client"
+        ></script>
+        {/* Load the Google API client library for Drive API calls */}
+        <script
+          async
+          defer
+          src="https://apis.google.com/js/api.js"
+        ></script>{" "}
       </head>
       <ThemeProvider>
         <ToastProvider>
