@@ -87,7 +87,6 @@
     .workflow-card {
         max-height: 450px !important;
         min-height: 450px !important;
-        max-width: fit-content !important;
     }
 
     .workflow-column {
