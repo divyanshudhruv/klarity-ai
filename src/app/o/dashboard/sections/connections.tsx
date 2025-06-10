@@ -1,5 +1,16 @@
 "use client";
-import { Column, Flex, Media, Row, Text, useToast } from "@/once-ui/components";
+import {
+  Button,
+  Column,
+  Flex,
+  Icon,
+  IconButton,
+  Input,
+  Media,
+  Row,
+  Text,
+  useToast,
+} from "@/once-ui/components";
 import React, { useState } from "react";
 import { Lexend, DM_Sans } from "next/font/google";
 const lexend = Lexend({ subsets: ["latin"], weight: ["300"] });
@@ -9,74 +20,83 @@ export default function Connections() {
   const [connectionsData, setConnectionsData] = useState([
     {
       title: "Gmail",
-      image_url: "https://www.svgrepo.com/download/381000/new-logo-gmail.svg",
+      logo: "https://www.svgrepo.com/download/381000/new-logo-gmail.svg",
       href: "",
+      description: "Connect your Gmail account",
       connection: false,
       id: "gmail",
     },
     {
       title: "Whatsapp",
-      image_url: "https://assets.pipedream.net/s.v0/app_mWnhY4/logo/orig",
+      logo: "https://assets.pipedream.net/s.v0/app_mWnhY4/logo/orig",
       href: "",
+      description: "Connect your Whatsapp account",
       connection: false,
       id: "whatsapp",
     },
     {
-      title: "Telegram",
-      image_url: "https://assets.pipedream.net/s.v0/app_OD5hL6/logo/orig",
-      href: "",
-      connection: false,
-      id: "telegram",
-    },
-    {
       title: "Sheets",
-      image_url: "https://assets.pipedream.net/s.v0/app_168hvn/logo/orig",
+      logo: "https://assets.pipedream.net/s.v0/app_168hvn/logo/orig",
       href: "",
+      description: "Connect your Sheets account",
       connection: false,
       id: "sheets",
     },
     {
       title: "Airtable",
-      image_url: "https://assets.pipedream.net/s.v0/app_XBxhAl/logo/orig",
+      logo: "https://assets.pipedream.net/s.v0/app_XBxhAl/logo/orig",
       href: "",
+      description: "Connect your Airtable account",
       connection: false,
       id: "airtable",
     },
     {
       title: "Trello",
-      image_url: "https://assets.pipedream.net/s.v0/app_168hnX/logo/orig",
+      logo: "https://assets.pipedream.net/s.v0/app_168hnX/logo/orig",
       href: "",
+      description: "Connect your Trello account",
       connection: false,
       id: "trello",
     },
     {
       title: "Github",
-      image_url:
-        "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png",
+      logo: "https://logoeps.com/wp-content/uploads/2014/05/37318-github-logo-icon-vector-icon-vector-eps.png",
       href: "",
+      description: "Connect your Github account",
       connection: false,
       id: "github",
     },
     {
       title: "Slack",
-      image_url: "https://assets.pipedream.net/s.v0/app_OkrhR1/logo/orig",
+      logo: "https://assets.pipedream.net/s.v0/app_OkrhR1/logo/orig",
       href: "",
+      description: "Connect your Slack account",
       connection: false,
       id: "slack",
     },
     {
       title: "Notion",
-      image_url: "https://assets.pipedream.net/s.v0/app_X7Lhxr/logo/orig",
+      logo: "https://assets.pipedream.net/s.v0/app_X7Lhxr/logo/orig",
       href: "",
+      description: "Connect your Notion account",
       connection: false,
       id: "notion",
     },
     {
       title: "Calendar",
-      image_url: "https://assets.pipedream.net/s.v0/app_13Gh2V/logo/orig",
+      logo: "https://assets.pipedream.net/s.v0/app_13Gh2V/logo/orig",
       href: "",
+      description: "Connect your Calendar account",
       connection: false,
       id: "calendar",
+    },
+    {
+      title: "Telegram",
+      logo: "https://assets.pipedream.net/s.v0/app_OD5hL6/logo/orig",
+      href: "",
+      description: "Connect your Telegram account",
+      connection: false,
+      id: "telegram",
     },
   ]);
 
@@ -99,7 +119,7 @@ export default function Connections() {
   };
 
   return (
-    <Flex
+    <Column
       center
       fillWidth
       width={100}
@@ -107,8 +127,9 @@ export default function Connections() {
       radius="m"
       style={{ maxWidth: "83vw" }}
       paddingX="16"
+      gap="16"
     >
-      <Column
+      {/* <Column
         horizontal="start"
         vertical="start"
         fillWidth
@@ -144,10 +165,128 @@ export default function Connections() {
             />
           ))}
         </Row>
-      </Column>
+      </Column> */}
+      <SearchBar></SearchBar>
+      <Row
+        fillWidth
+        fitHeight
+        horizontal="start"
+        wrap={true}
+        gap="16"
+      >
+        {connectionsData.map((card, index) => (
+          <Card key={index} {...card} />
+        ))}
+      </Row>
+    </Column>
+  );
+}
+
+function SearchBar() {
+  const [searchValue, setSearchValue] = useState<string>("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
+  };
+
+  const handleClear = () => {
+    setSearchValue("");
+  };
+
+  return (
+    <Flex fillWidth fitHeight center>
+      <Row center fillWidth style={{ minWidth: "100%" }}>
+        <Input
+          id="input-1"
+          placeholder="Search cards"
+          value={searchValue}
+          onChange={handleChange}
+          hasPrefix={<Icon name="search" size="xs" />}
+          hasSuffix={
+            searchValue.length > 0 ? (
+              <IconButton
+                variant="ghost"
+                icon="close"
+                size="s"
+                onClick={handleClear}
+                aria-label="Clear search"
+              />
+            ) : null
+          }
+        />
+      </Row>
     </Flex>
   );
 }
+type CardProps = {
+  logo: string;
+  title: string;
+  description: string;
+  href: string;
+};
+
+const Card: React.FC<CardProps> = ({ logo, title, description, href = "" }) => (
+  <Column
+    border="neutral-medium"
+    borderStyle="solid"
+    horizontal="center"
+    gap="128"
+    vertical="space-between"
+    fitWidth
+    fitHeight
+    radius="xl"
+    wrap={true}
+    paddingY="16"
+    paddingX="16"
+  >
+    <Column
+      fillWidth
+      fitHeight
+      paddingY="8"
+      paddingX="8"
+      maxWidth={18}
+      width={18}
+      horizontal="start"
+      zIndex={10}
+    >
+      <Column vertical="center" horizontal="start" gap="12" marginBottom="8" fitHeight>
+        <Flex
+          width={2.5}
+          height={2.5}
+          background="neutral-medium"
+          radius="m"
+          center
+        >
+          <Media src={logo} unoptimized width={1.6} height={1.6}></Media>
+        </Flex>
+        <Column>
+          <Text
+            variant="label-strong-l"
+            className={lexend.className}
+            marginBottom="8"
+            onBackground="neutral-strong"
+          >
+            {title}
+          </Text>
+          <Text
+            variant="label-default-xs"
+            className={dmSans.className}
+            onBackground="neutral-weak"
+            style={{ fontSize: "15px", letterSpacing: "-0.5px !important" }}
+          >
+            {description}
+          </Text>
+        </Column>
+      </Column>
+      <Flex fillWidth height={1}></Flex>
+    </Column>
+    <Flex fillWidth fitHeight>
+      <Button variant="primary" fillWidth size="l">
+        <Text variant="label-default-s">Connect now</Text>
+      </Button>
+    </Flex>
+  </Column>
+);
 
 const ConnectionsCard = ({
   title,
