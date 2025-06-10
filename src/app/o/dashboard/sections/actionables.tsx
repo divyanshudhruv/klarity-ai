@@ -15,6 +15,7 @@ import {
   DateRangeInput,
   Select,
   Option,
+  Carousel,
 } from "@/once-ui/components";
 import { Lexend, DM_Sans } from "next/font/google";
 import React from "react";
@@ -46,6 +47,29 @@ export default function Actionables() {
       showAutomation: true, // Show automation section
       showUrgency: true, // Show urgency section
       showSummary: true, // Show summary section
+      showAttachments: true, // Show attachments section
+      attachments:[
+                  {
+                    src: "https://ci3.googleusercontent.com/meips/ADKq_NaPzLQgkSt44N4LTp2CtWLZJVtLYMnzLFRJY7mgPZ97IIF15NXgiVY9W14A56syUdyNfz06bHaC6RZfVSf0X5ie8SDSfuTyvjXoLcHrdfX2SLPWge5nvJU=s0-d-e1-ft#https://miro.medium.com/fit/c/320/214/1*wXW4MoVuiLhrC2C0cG0u2w.png",
+                    alt: "Image 1",
+                  },
+                  {
+                    src: "https://ci3.googleusercontent.com/meips/ADKq_NbSL4LmkMKmCGLZpSLorFfHfO0Q29svvgFLogg0MGvCBeBKT-xpFvQzRx6bPsrbSk5azKOVKcmMMhUtUXT3X-LA8QqlnujHQxN1sC-s-zWyqqldYSPScVU=s0-d-e1-ft#https://miro.medium.com/fit/c/320/214/1*o5AprBmR8hVLOYJmEUiSuw.png",
+                    alt: "Image 2",
+                  },
+                  {
+                    src: "https://ci3.googleusercontent.com/meips/ADKq_Nbq1nLnEfsvk5islfrw-nAqYlRpIJv2N43lLdVFaWI6BFEChH9OO6GCV88aktuGbukj3G-FWdwYwZz4rm9WuExvO9M1HqQ5ptKxnNkN6sfWySmTOSc31eSX=s0-d-e1-ft#https://miro.medium.com/fit/c/320/214/1*ME8KEL-0rOvrSuzF1X0Z4A.jpeg",
+                    alt: "Image 3",
+                  },
+                  {
+                     src: "https://ci3.googleusercontent.com/meips/ADKq_NbSL4LmkMKmCGLZpSLorFfHfO0Q29svvgFLogg0MGvCBeBKT-xpFvQzRx6bPsrbSk5azKOVKcmMMhUtUXT3X-LA8QqlnujHQxN1sC-s-zWyqqldYSPScVU=s0-d-e1-ft#https://miro.medium.com/fit/c/320/214/1*o5AprBmR8hVLOYJmEUiSuw.png",
+                    alt: "Image 3",
+                  },
+                  {
+                    src: "https://ci3.googleusercontent.com/meips/ADKq_Nbz_cdoZmz1iok8dk6U-l0pe2MFKUxbZ6iYBIV7qMxSweER07A4cNm8eRs6KIVZGKCQb4G4ZhGrjMfNw_1DXhhSeCOI_MNr4rEjrGWrGg=s0-d-e1-ft#https://miro.medium.com/fit/c/320/214/0*a3jy83rllTdh6-S-",
+                    alt: "Image 4",
+                  }
+                  ]
       // Show summary section
     },
     {
@@ -100,6 +124,7 @@ export default function Actionables() {
       showAutomation: true, // Show automation section
       showUrgency: true, // Show urgency section
       showSummary: true, // Show summary section
+      
     },
   ];
 
@@ -320,6 +345,8 @@ type CardProps = {
   showAutomation?: boolean; // Optional prop to control automation visibility
   showSummary?: boolean; // Optional prop to control summary visibility
   showUrgency?: boolean; // Optional prop to control urgency visibility
+  showAttachments?: boolean; // Optional prop to control attachments visibility
+  attachments?: { src: string; alt: string }[]; // Updated to accept objects with src and alt properties
 };
 
 const Card: React.FC<CardProps> = ({
@@ -332,6 +359,8 @@ const Card: React.FC<CardProps> = ({
   showAutomation = false, // Default to false if not provided
   showSummary = false, // Default to true if not provided
   showUrgency = false, // Default to true if not provided
+  showAttachments = false, // Default to false if not provided
+  attachments = [], // Default to an empty array if not provided
 }) => (
   <Column
     border="neutral-medium"
@@ -491,7 +520,7 @@ const Card: React.FC<CardProps> = ({
             </Column>
           )}
           {showAutomation && (
-            <Column gap="12" marginBottom="s">
+            <Column gap="12" marginBottom="m" >
               <Row>
                 <Text variant="label-default-s" onBackground="neutral-medium">
                   <i className="ri-robot-3-line"></i>&nbsp;Automation
@@ -543,7 +572,30 @@ const Card: React.FC<CardProps> = ({
               </Row>
             </Column>
           )}
+          {showAttachments && (
+          <Column gap="12" marginBottom="xs">
+            <Row>
+              <Text variant="label-default-s" onBackground="neutral-medium">
+                <i className="ri-links-line"></i>&nbsp;Attachments
+              </Text>
+            </Row>
+            <Column
+              fillWidth
+              fitHeight
+              style={{ backgroundColor: "#fff" }}
+              radius="m"
+              vertical="start"
+              horizontal="start"
+              padding="12"
+            >
+              <Carousel
+                indicator="line"
+                images={attachments.map((attachment) => ({ src: attachment.src, alt: attachment.alt }))}
+              />
+            </Column>
+          </Column>  )}
         </Column>
+      
       </Column>
     </Column>
   </Column>

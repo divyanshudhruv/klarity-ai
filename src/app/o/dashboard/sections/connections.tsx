@@ -106,6 +106,7 @@ export default function Connections() {
       fitHeight
       radius="m"
       style={{ maxWidth: "83vw" }}
+      paddingX="16"
     >
       <Column
         horizontal="start"
@@ -117,7 +118,7 @@ export default function Connections() {
         gap="16"
       >
         <Text
-          style={{ fontSize: "45px" }}
+          style={{ fontSize: "45px",lineHeight:"1" }}
           onBackground="neutral-strong"
           className={dmSans.className}
         >

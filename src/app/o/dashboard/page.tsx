@@ -14,7 +14,7 @@ import {
 import NavbarO from "@/app/components/NavbarO";
 import { fetchUser } from "@/app/lib/fetchUser";
 import { useEffect } from "react";
-import ScrollerO from "./components/ScrollerO";
+import ScrollerNavigation from "./components/ScrollerNavigation";
 
 export default function Home() {
   return (
@@ -26,7 +26,7 @@ export default function Home() {
       </ScrollToTop>
       <Column horizontal="center" vertical="start" fitHeight fillWidth>
         <NavbarO />
-        <ScrollerO></ScrollerO>
+        <ScrollerNavigation></ScrollerNavigation>
       </Column>
     </>
   );

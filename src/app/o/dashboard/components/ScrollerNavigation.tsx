@@ -24,15 +24,15 @@ const tiempos = localFont({
   style: "normal",
 });
 import { useEffect, useState } from "react";
-import Actionables from "../@sections/actionables";
-import Inbox from "../@sections/inbox";
-import Alerts from "./../@sections/alerts";
-import Insights from "../@sections/insights";
-import Connections from "../@sections/connections";
-import ActivityLog from "../@sections/activity-log";
+import Actionables from "../sections/actionables";
+import Inbox from "../sections/inbox";
+import Alerts from "./../sections/alerts";
+import Insights from "../sections/insights";
+import Connections from "../sections/connections";
+import ActivityLog from "../sections/activity-log";
 import supabase from "@/app/lib/supabase";
 const lexend = Lexend({ subsets: ["latin"], weight: ["300"] });
-export default function ScrollerO() {
+export default function ScrollerNavigation() {
   const [selectedKey, setSelectedKey] = useState<string>("");
   type Section = {
     name: string;
