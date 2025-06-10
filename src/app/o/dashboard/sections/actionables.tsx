@@ -143,7 +143,11 @@ export default function Actionables() {
         horizontal="start"
         wrap={true}
         gap="20"
-        style={{ maxWidth: "100% !important", minWidth: "60vw !important" }}
+        // style={{
+        //   maxWidth: "130vw !important",
+        //   minWidth: "110vw !important",
+        //   zIndex: "999 !important",
+        // }}
       >
         {cardData.map((card, index) => (
           <Card key={index} {...card} />
@@ -178,12 +182,19 @@ const SearchControl: React.FC = () => {
     setSearchValue("");
   };
   return (
-    <Column gap="16" fillWidth fitHeight style={{zIndex:"9999999 !important"}}>
+    <Column
+      gap="16"
+      fillWidth
+      fitHeight
+      style={{ zIndex: "99999999 !important" }}
+    >
       <Row
         center
         fillWidth
-        style={{ minWidth: "100%" }}
-        className="container-s"
+        style={{
+          minWidth: "100%",
+          zIndex: "99999999 !important",
+        }}
       >
         <Input
           id="input-1"
@@ -211,6 +222,7 @@ const SearchControl: React.FC = () => {
         gap="20"
         className="search-subgroup"
         fillWidth
+        style={{ zIndex: "99999999 !important" }}
       >
         <DateRangeInput
           id="basic-date-range-example"
@@ -374,6 +386,7 @@ const Card: React.FC<CardProps> = ({
     wrap={true}
     paddingY="16"
     paddingX="16"
+    style={{ zIndex: "999 !important" }}
   >
     <Column
       fillWidth

@@ -11,7 +11,7 @@ import {
   Text,
   useToast,
 } from "@/once-ui/components";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Lexend, DM_Sans } from "next/font/google";
 const lexend = Lexend({ subsets: ["latin"], weight: ["300"] });
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "700"] });
@@ -51,38 +51,6 @@ export default function Connections() {
       id: "airtable",
     },
     {
-      title: "Trello",
-      logo: "https://assets.pipedream.net/s.v0/app_168hnX/logo/orig",
-      href: "",
-      description: "Connect your Trello account",
-      connection: false,
-      id: "trello",
-    },
-    {
-      title: "Github",
-      logo: "https://logoeps.com/wp-content/uploads/2014/05/37318-github-logo-icon-vector-icon-vector-eps.png",
-      href: "",
-      description: "Connect your Github account",
-      connection: false,
-      id: "github",
-    },
-    {
-      title: "Slack",
-      logo: "https://assets.pipedream.net/s.v0/app_OkrhR1/logo/orig",
-      href: "",
-      description: "Connect your Slack account",
-      connection: false,
-      id: "slack",
-    },
-    {
-      title: "Notion",
-      logo: "https://assets.pipedream.net/s.v0/app_X7Lhxr/logo/orig",
-      href: "",
-      description: "Connect your Notion account",
-      connection: false,
-      id: "notion",
-    },
-    {
       title: "Calendar",
       logo: "https://assets.pipedream.net/s.v0/app_13Gh2V/logo/orig",
       href: "",
@@ -97,6 +65,40 @@ export default function Connections() {
       description: "Connect your Telegram account",
       connection: false,
       id: "telegram",
+    },
+    {
+      title: "Slack",
+      logo: "https://assets.pipedream.net/s.v0/app_OkrhR1/logo/orig",
+      href: "",
+      description: "Connect your Slack account",
+      connection: false,
+      id: "slack",
+    },
+    {
+      title: "Github",
+      logo: "https://logoeps.com/wp-content/uploads/2014/05/37318-github-logo-icon-vector-icon-vector-eps.png",
+      href: "",
+      description: "Connect your Github account",
+      connection: false,
+      id: "github",
+    },
+
+    {
+      title: "Trello",
+      logo: "https://assets.pipedream.net/s.v0/app_168hnX/logo/orig",
+      href: "",
+      description: "Connect your Trello account",
+      connection: false,
+      id: "trello",
+    },
+
+    {
+      title: "Notion",
+      logo: "https://assets.pipedream.net/s.v0/app_X7Lhxr/logo/orig",
+      href: "",
+      description: "Connect your Notion account",
+      connection: false,
+      id: "notion",
     },
   ]);
 
@@ -125,55 +127,12 @@ export default function Connections() {
       width={100}
       fitHeight
       radius="m"
-      style={{ maxWidth: "83vw" }}
+      style={{ maxWidth: "82vw" }}
       paddingX="16"
       gap="16"
     >
-      {/* <Column
-        horizontal="start"
-        vertical="start"
-        fillWidth
-        fitHeight
-        radius="m"
-        wrap={true}
-        gap="16"
-      >
-        <Text
-          style={{ fontSize: "45px",lineHeight:"1" }}
-          onBackground="neutral-strong"
-          className={dmSans.className}
-        >
-          Connections
-        </Text>
-        <Row
-          fillWidth
-          wrap={true}
-          fitHeight
-          horizontal="start"
-          vertical="center"
-          gap="16"
-        >
-          {connectionsData.map((connection) => (
-            <ConnectionsCard
-              key={connection.id}
-              title={connection.title}
-              image_url={connection.image_url}
-              href={connection.href}
-              connection={connection.connection}
-              id={connection.id}
-              toggleConnection={toggleConnection}
-            />
-          ))}
-        </Row>
-      </Column> */}
       <SearchBar></SearchBar>
-      <Row
-        fillWidth
-        fitHeight
-        horizontal="start"
-        wrap={true}
-        gap="16"
-      >
+      <Row fillWidth fitHeight horizontal="start" wrap={true} gap="16">
         {connectionsData.map((card, index) => (
           <Card key={index} {...card} />
         ))}
@@ -249,13 +208,21 @@ const Card: React.FC<CardProps> = ({ logo, title, description, href = "" }) => (
       horizontal="start"
       zIndex={10}
     >
-      <Column vertical="center" horizontal="start" gap="12" marginBottom="8" fitHeight>
+      <Column
+        vertical="center"
+        horizontal="start"
+        gap="12"
+        marginBottom="8"
+        fitHeight
+      >
         <Flex
           width={2.5}
           height={2.5}
           background="neutral-medium"
           radius="m"
           center
+          border="neutral-strong"
+          borderStyle="dashed"
         >
           <Media src={logo} unoptimized width={1.6} height={1.6}></Media>
         </Flex>
