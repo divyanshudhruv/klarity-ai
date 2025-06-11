@@ -33,7 +33,6 @@ export default function NavbarO() {
       try {
         const session = await supabase.auth.getSession();
         const userId = session?.data?.session?.user?.id;
-        console.log("User ID:", userId);
 
         if (!userId) {
           console.error("No user session found.");
@@ -58,7 +57,6 @@ export default function NavbarO() {
           is_pro: data?.is_pro || false,
           is_admin: data?.is_admin ?? false,
         });
-        console.log(data.name, user.avatar_url, user.is_pro, user.is_admin);
       } catch (err) {
         console.error("Unexpected error:", err);
       }

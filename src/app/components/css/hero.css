@@ -1,18 +1,18 @@
 @media (max-width: 950px) {
     .hero-text {
-        font-size: 60px !important;
+        font-size: 60px;
     }
 }
 
 @media (max-width: 850px) {
     .hero-text {
-        font-size: 45px !important;
+        font-size: 45px;
     }
 }
 
 @media (max-width: 550px) {
     .hero-text {
-        font-size: 28px !important;
+        font-size: 20px;
     }
 }
 
@@ -21,4 +21,33 @@
     .badge {
         scale: 0.9 !important;
     }
+
+    .hero-text {
+        font-size: 12px !important;
+    }
+
+    .hero-subtitle {
+        font-size: 14px !important;
+    }
+.hero-container{
+    width: 90vw    !important;
+    min-width: 90vw !important;
+    max-width: 90vw !important;
+}
+}
+@media (max-width: 450px) {
+.badge {
+        scale: 0.8 !important;
+    }
+}
+
+.hero-subtitle {
+    font-weight: lighter;
+    line-height: 1.5;
+    font-size: 18px;
+}
+
+.hero-text {
+    font-size: 70px;
+    color: "#171717"
 }

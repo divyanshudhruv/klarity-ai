@@ -35,21 +35,29 @@ export default function Connections() {
       id: "whatsapp",
     },
     {
-      title: "Sheets",
-      logo: "https://assets.pipedream.net/s.v0/app_168hvn/logo/orig",
+      title: "Notion",
+      logo: "https://assets.pipedream.net/s.v0/app_X7Lhxr/logo/orig",
       href: "",
-      description: "Connect your Sheets account",
+      description: "Connect your Notion account",
       connection: false,
-      id: "sheets",
+      id: "notion",
     },
-    {
-      title: "Airtable",
-      logo: "https://assets.pipedream.net/s.v0/app_XBxhAl/logo/orig",
-      href: "",
-      description: "Connect your Airtable account",
-      connection: false,
-      id: "airtable",
-    },
+    // {
+    //   title: "Sheets",
+    //   logo: "https://assets.pipedream.net/s.v0/app_168hvn/logo/orig",
+    //   href: "",
+    //   description: "Connect your Sheets account",
+    //   connection: false,
+    //   id: "sheets",
+    // },
+    // {
+    //   title: "Airtable",
+    //   logo: "https://assets.pipedream.net/s.v0/app_XBxhAl/logo/orig",
+    //   href: "",
+    //   description: "Connect your Airtable account",
+    //   connection: false,
+    //   id: "airtable",
+    // },
     {
       title: "Calendar",
       logo: "https://assets.pipedream.net/s.v0/app_13Gh2V/logo/orig",
@@ -66,14 +74,24 @@ export default function Connections() {
       connection: false,
       id: "telegram",
     },
-    {
-      title: "Slack",
-      logo: "https://assets.pipedream.net/s.v0/app_OkrhR1/logo/orig",
-      href: "",
-      description: "Connect your Slack account",
-      connection: false,
-      id: "slack",
-    },
+    // {
+    //   title: "Slack",
+    //   logo: "https://assets.pipedream.net/s.v0/app_OkrhR1/logo/orig",
+    //   href: "",
+    //   description: "Connect your Slack account",
+    //   connection: false,
+    //   id: "slack",
+    // },
+
+    // {
+    //   title: "Trello",
+    //   logo: "https://assets.pipedream.net/s.v0/app_168hnX/logo/orig",
+    //   href: "",
+    //   description: "Connect your Trello account",
+    //   connection: false,
+    //   id: "trello",
+    // },
+
     {
       title: "Github",
       logo: "https://logoeps.com/wp-content/uploads/2014/05/37318-github-logo-icon-vector-icon-vector-eps.png",
@@ -81,24 +99,6 @@ export default function Connections() {
       description: "Connect your Github account",
       connection: false,
       id: "github",
-    },
-
-    {
-      title: "Trello",
-      logo: "https://assets.pipedream.net/s.v0/app_168hnX/logo/orig",
-      href: "",
-      description: "Connect your Trello account",
-      connection: false,
-      id: "trello",
-    },
-
-    {
-      title: "Notion",
-      logo: "https://assets.pipedream.net/s.v0/app_X7Lhxr/logo/orig",
-      href: "",
-      description: "Connect your Notion account",
-      connection: false,
-      id: "notion",
     },
   ]);
 
