@@ -1,6 +1,38 @@
-@media (max-width: 1285px) {
+/* @media (max-width: 1285px) {
     .scroller-search {
         align-items: center !important;
         justify-content: center !important;
     }
+
+
 }
+
+@media (max-width: 1070px) {
+
+    .scroller-search {
+        flex-wrap: wrap !important;
+        flex-direction: column;
+    }
+
+    .search-input {
+        max-width: 861px !important;
+        width: 100% !important;
+    }
+
+
+    .search-subgroup {
+        display: flex;
+    }
+}
+.search-input{
+    width: 100%;
+}
+
+@media (max-width: 1070px) {
+    .search-subgroup {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+} */

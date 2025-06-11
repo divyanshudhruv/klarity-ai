@@ -13,25 +13,26 @@ import {
   IconButton,
   Icon,
   Select,
+  DateRangeInput,
 } from "@/once-ui/components";
 import { Lexend } from "next/font/google";
 import localFont from "next/font/local";
-import "./css/scrollO.css"
+import "./css/scrollO.css";
 const tiempos = localFont({
   src: "../../../../fonts/tiempos/TestTiemposText-Regular-BF66457a50cd521.otf",
   weight: "100",
   style: "normal",
 });
 import { useEffect, useState } from "react";
-import Actionables from "../@sections/actionables";
-import Inbox from "../@sections/inbox";
-import Alerts from "./../@sections/alerts";
-import Insights from "../@sections/insights";
-import Connections from "../@sections/connections";
-import ActivityLog from "../@sections/activity-log";
+import Actionables from "../sections/actionables";
+import Inbox from "../sections/inbox";
+import Alerts from "./../sections/alerts";
+import Insights from "../sections/insights";
+import Connections from "../sections/connections";
+import ActivityLog from "../sections/activity-log";
 import supabase from "@/app/lib/supabase";
 const lexend = Lexend({ subsets: ["latin"], weight: ["300"] });
-export default function ScrollerO() {
+export default function ScrollerNavigation() {
   const [selectedKey, setSelectedKey] = useState<string>("");
   type Section = {
     name: string;
@@ -133,23 +134,29 @@ export default function ScrollerO() {
     <>
       <Column
         center
-        // border="neutral-medium"
-        // borderStyle="dashed"
         fillWidth
         fitHeight
         radius="m"
         paddingY="xs"
         marginBottom="20"
       >
-        {" "}
         <Scroller
           fadeColor="transparent"
           overflowX="scroll"
           borderBottom="neutral-medium"
           borderStyle="solid"
           paddingX="l"
+          // height={4}
+          fitHeight
         >
-          <Row horizontal="start" vertical="center" fitWidth>
+          <Row
+            horizontal="start"
+            vertical="center"
+            fitWidth
+            fitHeight
+            paddingBottom="0"
+            paddingTop="0"
+          >
             <Flex center fitWidth gap="16">
               {sections.map((section, index) => (
                 <Option
@@ -172,106 +179,11 @@ export default function ScrollerO() {
             </Flex>
           </Row>
         </Scroller>
-        <Flex fillWidth height={1}></Flex>
-        <Row
-          horizontal="start"
-          vertical="center"
-          fillWidth
-          maxWidth={101}
-          style={{ maxWidth: "1280px" }}
-          paddingX="l"
-          gap="16"
-          wrap={true}
-          className="scroller-search"
-        >
-          <Flex center style={{ minWidth: "60%", maxWidth: "60%" }}>
-            {" "}
-            <Input
-              id="input-1"
-              placeholder="Search cards"
-              value={searchValue}
-              onChange={handleChange}
-              hasPrefix={<Icon name="search" size="xs" />}
-              hasSuffix={
-                searchValue.length > 0 ? (
-                  <IconButton
-                    variant="ghost"
-                    icon="close"
-                    size="s"
-                    onClick={handleClear}
-                    aria-label="Clear search"
-                  />
-                ) : null
-              }
-            />
-          </Flex>
-          <Flex center>
-            <Select
-              height="s"
-              style={{ width: "200px" }}
-              id="basic-select"
-              label="Select as"
-              options={[
-                { label: "United States", value: "us" },
-                { label: "Canada", value: "ca" },
-                { label: "United Kingdom", value: "uk" },
-                { label: "Australia", value: "au" },
-              ]}
-            />
-          </Flex>
-          <Flex
-            fitWidth
-            fitHeight
-            border="neutral-medium"
-            borderStyle="solid"
-            gap="4"
-            style={{ maxHeight: "46px", minHeight: "46px", padding: "4px" }}
-            radius="m"
-          >
-            <Option
-              key={"grid"}
-              label={
-                <Text onBackground="neutral-medium">
-                  <i
-                    className="ri-function-line"
-                    style={{ fontSize: "17px" }}
-                  ></i>
-                </Text>
-              }
-              value="grid"
-            />
-            <Option
-              key={"list"}
-              label={
-                <Text onBackground="neutral-strong">
-                  <i className="ri-list-check" style={{ fontSize: "17px" }}></i>{" "}
-                </Text>
-              }
-              value="list"
-            />
-          </Flex>
-          <Flex center maxWidth={8} vertical="center" horizontal="center">
-            {" "}
-            <Button fillWidth style={{ minHeight: "46px", maxHeight: "46px" }}>
-              <Text variant="label-default-m">
-                Create new{" "}
-                <i
-                  className="ri-arrow-down-s-line"
-                  style={{ fontSize: "16px" }}
-                ></i>
-              </Text>
-            </Button>
-          </Flex>
-        </Row>
       </Column>
       <Row
         fillWidth
-        fitHeight
-        horizontal="center"
-        vertical="center"
-        wrap={true}
-        gap="32"
-        style={{ maxWidth: "1420px" }}
+        center
+        // background="accent-strong"
       >
         {selectedKey === "My Actionables" ? (
           isAdmin ? (
@@ -285,23 +197,6 @@ export default function ScrollerO() {
         {selectedKey === "Insight Library" ? <Insights /> : null}
         {selectedKey === "Connections" ? <Connections /> : null}
         {selectedKey === "Activity Log" ? <ActivityLog /> : null}
-      </Row>
-      <Row
-        center
-        fillWidth
-        fitHeight
-        marginTop="20"
-        marginBottom="20"
-        maxWidth={20}
-      >
-        <Button
-          size="l"
-          fillWidth
-          variant="secondary"
-          style={{ backgroundColor: "#F9F5F4" }}
-        >
-          <Text variant="label-default-m">Load more</Text>
-        </Button>
       </Row>
     </>
   );

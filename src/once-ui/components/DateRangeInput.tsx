@@ -1,10 +1,20 @@
 "use client";
 
 import React, { useState, useCallback, useEffect } from "react";
-import { Input, DropdownWrapper, Flex, DateRange, DateRangePicker, Row } from ".";
+import {
+  Input,
+  DropdownWrapper,
+  Flex,
+  DateRange,
+  DateRangePicker,
+  Row,
+} from ".";
 
 interface DateRangeInputProps
-  extends Omit<React.ComponentProps<typeof Input>, "onChange" | "value" | "label"> {
+  extends Omit<
+    React.ComponentProps<typeof Input>,
+    "onChange" | "value" | "label"
+  > {
   id: string;
   startLabel: string;
   endLabel: string;
@@ -13,6 +23,7 @@ interface DateRangeInputProps
   minHeight?: number;
   className?: string;
   style?: React.CSSProperties;
+  Dstyle?: React.CSSProperties;
 }
 
 interface LocalizedDateRange {
@@ -42,11 +53,12 @@ export const DateRangeInput: React.FC<DateRangeInputProps> = ({
   minHeight,
   className,
   style,
+  Dstyle,
   ...rest
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [inputValue, setInputValue] = useState(
-    value ? formatDateRange(value) : { startDate: "", endDate: "" },
+    value ? formatDateRange(value) : { startDate: "", endDate: "" }
   );
   useEffect(() => {
     if (value) {
@@ -62,7 +74,7 @@ export const DateRangeInput: React.FC<DateRangeInputProps> = ({
         setIsOpen(false);
       }
     },
-    [onChange],
+    [onChange]
   );
 
   const handleInputClick = useCallback(() => {
@@ -70,41 +82,43 @@ export const DateRangeInput: React.FC<DateRangeInputProps> = ({
   }, []);
 
   const trigger = (
-    <Row fillWidth horizontal="center" gap="-1">
+    <Row fillWidth horizontal="center" style={{ maxWidth: "280px" }}>
       <Input
-        className="cursor-interactive"
-        style={{
-          textOverflow: "ellipsis",
-        }}
-        radius={"left"}
         id={id}
-        label={startLabel}
+        placeholder="Start"
+        radius="left"
         value={inputValue.startDate ?? ""}
-        error={error}
         readOnly
         onClick={handleInputClick}
-        {...rest}
-      />
-      <Input
-        className="cursor-interactive"
+        cursor="interactive"
         style={{
           textOverflow: "ellipsis",
         }}
-        radius={"right"}
+        {...rest}
+        className="cursor-interactive"
+      ></Input>
+
+      <Input
         id={id}
-        label={endLabel}
+        placeholder="End"
+        radius="right"
         value={inputValue.endDate ?? ""}
-        error={error}
         readOnly
         onClick={handleInputClick}
+        cursor="interactive"
+        
+        style={{
+          textOverflow: "ellipsis",
+        }}
         {...rest}
+        className="cursor-interactive"
       />
     </Row>
   );
 
   const dropdown = (
-    <Flex padding="20" center={true}>
-      <DateRangePicker value={value} onChange={handleDateChange} />
+    <Flex padding="8" paddingY="0"center={true} vertical="center" horizontal="center">
+      <DateRangePicker value={value} onChange={handleDateChange} style={{scale:"0.9"}} />
     </Flex>
   );
 
@@ -117,7 +131,7 @@ export const DateRangeInput: React.FC<DateRangeInputProps> = ({
       isOpen={isOpen}
       closeAfterClick={false}
       className={className}
-      style={{ ...style }}
+      style={{ ...Dstyle }}
       onOpenChange={setIsOpen}
     />
   );

@@ -33,8 +33,13 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+next-env.d.ts 
 # clerk configuration (can include secrets)
 /.clerk/
 
 /src/middleware.ts
+
+# google cloud functions
+google-cloud-functions.tsx
+google-cloud-env.txt
+vercel.txt

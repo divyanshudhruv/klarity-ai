@@ -2,7 +2,7 @@
 
 
 
-# Once UI for Next.js | Klarity-AI
+# Once UI for Next.js | Klarity-AI `(beta)`
 
 A design system for indie builders who move fast and break limits without neglecting quality. Once UI combines the simplicity of low-code with the power of code: write 70% less compared to shadcn + tailwind.
 
@@ -80,5 +80,6 @@ Once UI is an indie project. [Sponsor us](https://github.com/sponsors/once-ui-sy
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## GitAds
+Its for testing purposes, please ~~do not~~ click on the link below.
 [![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=divyanshudhruv/klarity-ai@github)](https://gitads.dev/v1/ad-track?source=divyanshudhruv/klarity-ai@github)
 

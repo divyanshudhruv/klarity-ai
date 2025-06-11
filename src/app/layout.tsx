@@ -1,6 +1,6 @@
 import "@/once-ui/styles/index.scss";
 import "@/once-ui/tokens/index.scss";
-import "./global.css"
+import "./global.css";
 import classNames from "classnames";
 
 import {
@@ -76,7 +76,7 @@ export default function RootLayout({
         <script
           // biome-ignore lint/security/noDangerouslySetInnerHtml: <It's not dynamic nor a security issue.>
           dangerouslySetInnerHTML={{
-        __html: `
+            __html: `
           (function() {
             try {
           const theme = 'light';
