@@ -42,3 +42,4 @@ next-env.d.ts
 # google cloud functions
 google-cloud-functions.tsx
 google-cloud-env.txt
+vercel.txt

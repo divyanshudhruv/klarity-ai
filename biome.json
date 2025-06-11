@@ -9,7 +9,6 @@
     "ignoreUnknown": false,
     "ignore": []
   },
-
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
@@ -17,7 +16,7 @@
     "lineWidth": 100
   },
   "organizeImports": {
-    "enabled": true 
+    "enabled": true
   },
   "linter": {
     "enabled": true,

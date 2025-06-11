@@ -44,6 +44,7 @@ export default {
         port: "",
         pathname: "/**",
       }
+      
     ],
   },
 };
