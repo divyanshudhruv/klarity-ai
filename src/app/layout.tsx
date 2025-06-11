@@ -94,18 +94,6 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
           rel="stylesheet"
         />
-        {/* Load Google Identity Services (GSI) for authentication */}
-        <script
-          async
-          defer
-          src="https://accounts.google.com/gsi/client"
-        ></script>
-        {/* Load the Google API client library for Drive API calls */}
-        <script
-          async
-          defer
-          src="https://apis.google.com/js/api.js"
-        ></script>{" "}
       </head>
       <ThemeProvider>
         <ToastProvider>
