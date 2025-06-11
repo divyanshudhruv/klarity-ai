@@ -38,6 +38,12 @@ export default {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "bing.com",
+        port: "",
+        pathname: "/**",
+      }
     ],
   },
 };
