@@ -1,6 +1,7 @@
 {
   "name": "@once-ui-system/nextjs-starter",
   "version": "0.7",
+  
   "scripts": {
     "dev": "next dev --turbopack",
     "export": "next export",
@@ -9,16 +10,18 @@
     "biome-write": "npx @biomejs/biome format --write .",
     "lint": "next lint"
   },
+
   "dependencies": {
     "@clerk/nextjs": "^6.21.0",
     "@floating-ui/react-dom": "^2.1.1",
+    "@pipedream/sdk": "^1.6.8",
     "@supabase/supabase-js": "^2.49.10",
     "classnames": "^2.5.1",
     "compressorjs": "^1.2.1",
     "date-fns": "^4.1.0",
     "next": "15.2.3",
     "postcss": "^8.4.39",
-    "postcss-preset-env": "^9.5.15",
+    "postcss-preset-env": "^9.5.15", 
     "prismjs": "^1.30.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",

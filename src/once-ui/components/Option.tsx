@@ -58,28 +58,31 @@ const Option = forwardRef<HTMLDivElement, OptionProps>(
         }}
       >
         <Flex
-          {...props}
-          fillWidth
-          vertical="center"
-          paddingX="12"
-          paddingY="8"
-          gap="12"
-          radius="m"
-          role="option"
-          aria-selected={selected}
-          tabIndex={-1}
-          borderWidth={1}
-          borderStyle="solid"
-          cursor="interactive"
-          transition="micro-medium"
-          onClick={() => onClick?.(value)}
-          className={classNames(styles.option, {
+            {...props}
+            fillWidth
+            vertical="center"
+            paddingX="12"
+            paddingY="8"
+            gap="12"
+            radius="m"
+            role="option"
+            aria-selected={selected}
+            tabIndex={-1}
+            borderWidth={1}
+            borderStyle="solid"
+            cursor="interactive"
+            transition="micro-medium"
+            onClick={() => onClick?.(value)}
+            className={classNames(styles.option, {
             [styles.danger]: danger,
             [styles.selected]: selected,
             [styles.highlighted]: highlighted,
-          })}
-          data-value={value}
-        >
+            })}
+            style={{
+            backgroundColor: selected ? "#E6E4E2" : "", // 5% darker shade
+            }}
+            data-value={value}
+          >
           {hasPrefix && <Flex className={styles.prefix}>{hasPrefix}</Flex>}
           {children}
           <Flex

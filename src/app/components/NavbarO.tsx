@@ -18,7 +18,7 @@ import { unauthorized } from "next/navigation";
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 import { useEffect, useState } from "react";
-
+import "./css/navbarO.css";
 export default function NavbarO() {
   const { addToast } = useToast();
   const [user, setUser] = useState({
@@ -33,7 +33,6 @@ export default function NavbarO() {
       try {
         const session = await supabase.auth.getSession();
         const userId = session?.data?.session?.user?.id;
-        console.log("User ID:", userId);
 
         if (!userId) {
           console.error("No user session found.");
@@ -58,7 +57,6 @@ export default function NavbarO() {
           is_pro: data?.is_pro || false,
           is_admin: data?.is_admin ?? false,
         });
-        console.log(data.name, user.avatar_url, user.is_pro, user.is_admin);
       } catch (err) {
         console.error("Unexpected error:", err);
       }
@@ -73,7 +71,6 @@ export default function NavbarO() {
       addToast({
         variant: "danger",
         message: "Failed to log out. Please try again.",
-        
       });
     } else {
       window.location.href = "/";
@@ -90,16 +87,24 @@ export default function NavbarO() {
       paddingX="56"
       borderBottom="neutral-medium"
       borderStyle="dashed"
+      className="navbar-container"
+      marginBottom="0"
     >
       <Flex onClick={() => (window.location.href = "/")} cursor="pointer">
         <Text
           variant="heading-strong-xl"
           style={{ fontSize: "32px" }}
-          className={dmSans.className}
+          className={dmSans.className + " logo-k"}
         >
-          {" "}
-          klarity-ai
+          k
         </Text>
+        <Text
+          variant="heading-strong-xl"
+          style={{ fontSize: "32px" }}
+          className={dmSans.className + " logo-container"}
+        >
+          klarity-ai
+        </Text>{" "}
       </Flex>
 
       <UserMenu

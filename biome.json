@@ -9,7 +9,6 @@
     "ignoreUnknown": false,
     "ignore": []
   },
-
   "formatter": {
     "enabled": true,
     "indentStyle": "space",

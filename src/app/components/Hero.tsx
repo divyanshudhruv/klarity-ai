@@ -55,21 +55,19 @@ export default function Hero() {
         paddingY="12"
         maxWidth={60}
         gap="32"
+        className="hero-container"
       >
         <Text
-          className={`hero-text ` + tiempos.className}
+          className={tiempos.className + ` hero-text`}
           onBackground="neutral-strong"
-          style={{ fontSize: "70px", color: "#171717" }}
         >
           <center>Transform Digital Noise. Gain Actionable Klarity Now.</center>
         </Text>
         <Flex maxWidth={45} fillWidth>
           {" "}
           <Text
-            variant="heading-default-l"
             onBackground="neutral-weak"
-            className={lexend.className}
-            style={{ fontWeight: "lighter", lineHeight: "1.5" }}
+            className={lexend.className + " hero-subtitle"}
           >
             <center>
               Klarity-AI uses intelligent automation to parse your digital
