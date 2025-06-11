@@ -2,7 +2,7 @@
 
 
 
-# Once UI for Next.js | Klarity-AI
+# Once UI for Next.js | Klarity-AI `(beta)`
 
 A design system for indie builders who move fast and break limits without neglecting quality. Once UI combines the simplicity of low-code with the power of code: write 70% less compared to shadcn + tailwind.
 
